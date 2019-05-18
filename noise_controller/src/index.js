@@ -8,7 +8,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-const store = createStore(reducer, applyMiddleware(thunk, logger));
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>

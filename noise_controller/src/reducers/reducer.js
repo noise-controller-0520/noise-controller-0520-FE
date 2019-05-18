@@ -30,5 +30,8 @@ export const reducer = ( state = initialState, action ) => {
             ...state,
             isLoggingIn: false
         }
+
+        default:
+        return state;
     }
 }
