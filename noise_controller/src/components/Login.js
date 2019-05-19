@@ -11,7 +11,7 @@ class Login extends React.Component {
     }
   };
 
-  handleChange = e => {
+  handleChanges = e => {
     this.setState({
       credentials: {
         ...this.state.credentials,
@@ -35,14 +35,14 @@ class Login extends React.Component {
           <input
             type="text"
             name="username"
-            onChange={this.handleChange}
+            onChange={this.handleChanges}
             value={this.state.credentials.username}
           />
 
           <input
             type="password"
             name="password"
-            onChange={this.handleChange}
+            onChange={this.handleChanges}
             value={this.state.credentials.password}
           />
 
