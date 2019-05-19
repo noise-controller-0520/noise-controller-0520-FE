@@ -24,7 +24,7 @@ switch (action.type) {
         signingUp: false,
         teachers: [...this.state.teachers, action.payload]
     }
-
+ 
     case SIGN_UP_FAILURE:
     return {
         ...state,

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Login.css";
+
 import { connect } from "react-redux";
 import { login } from "../actions";
 
@@ -30,24 +32,26 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
-            type="text"
-            name="username"
-            onChange={this.handleChanges}
-            value={this.state.credentials.username}
-          />
+      <div className="background2">
+        <div className="login-container">
+            <h1> Login </h1>
+          <form onSubmit={this.login}>
+            <input
+              placeholder="Username"
+              name="username"
+              onChange={this.handleChanges}
+              value={this.state.credentials.username}
+            />
 
-          <input
-            type="password"
-            name="password"
-            onChange={this.handleChanges}
-            value={this.state.credentials.password}
-          />
-
+            <input
+              placeholder="Password"
+              name="password"
+              onChange={this.handleChanges}
+              value={this.state.credentials.password}
+            />
+          </form>
           <button onClick={this.login}> Log in </button>
-        </form>
+        </div>
       </div>
     );
   }
