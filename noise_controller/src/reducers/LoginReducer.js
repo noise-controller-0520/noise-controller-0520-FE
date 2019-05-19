@@ -9,7 +9,7 @@ const initialState = {
     error: ''
 }
 
-export const reducer = ( state = initialState, action ) => {
+export const LoginReducer = ( state = initialState, action ) => {
     switch (action.type) {
         case LOGIN_START:
         return {
