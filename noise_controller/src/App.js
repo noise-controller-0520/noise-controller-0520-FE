@@ -18,9 +18,11 @@ function App() {
     <div className="App">
       <NavBar />
 
-      <Route path="/sign-up" component={SignUp} />
+      <Route path="/register" component={SignUp} />
 
       <Route path="/login" component={Login} />
+
+      <PrivateRoute path="/classes" component={} />
 
       <PrivateRoute path="/main-page" component={MainPage} />
 
