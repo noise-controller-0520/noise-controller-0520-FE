@@ -1,0 +1,39 @@
+.form-container {
+  width: 300px;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+
+  background-color: rgba(128, 128, 128, 0.897);
+  align-items: center;
+}
+
+.background {
+  width: 100%;
+  background-image: url('../../img/sleepingtiger.jpg');
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  padding: 150px 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+h1 {
+    color: #FFFF;
+}
+
+input {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+button {
+  margin-top: 20px;
+}
