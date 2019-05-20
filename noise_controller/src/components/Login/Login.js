@@ -3,7 +3,7 @@ import React from "react";
 import "./Login.css";
 
 import { connect } from "react-redux";
-import { login } from "../actions";
+import { login } from "../../actions";
 
 class Login extends React.Component {
   state = {
@@ -26,7 +26,7 @@ class Login extends React.Component {
     e.preventDefault();
 
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/protected");
+      this.props.history.push("/main-page");
     });
   };
 

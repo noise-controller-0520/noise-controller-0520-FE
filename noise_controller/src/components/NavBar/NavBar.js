@@ -11,7 +11,9 @@ function NavBar() {
       
         <Link to="/login"> Login </Link>
      
-        <Link to="/protected"> Play </Link>
+        <Link to="/main-page"> Play </Link>
+
+        <Link to="/scoreboard"> Scoreboard </Link>
       
     </nav>
   );

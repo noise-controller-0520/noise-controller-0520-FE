@@ -3,13 +3,14 @@ import React from "react";
 import "./SignUp.css";
 
 import { connect } from "react-redux";
-import { signUp } from "../actions";
+import { signUp } from "../../actions";
 
 class SignUp extends React.Component {
   state = {
     teacher: {
       firstName: "",
       lastName: "",
+      email: "",
       className: "",
       username: "",
       password: ""
@@ -50,6 +51,13 @@ class SignUp extends React.Component {
             name="lastName"
             onChange={this.handleChanges}
             value={this.state.teacher.lastName}
+          />
+
+          <input
+            placeholder="Email"
+            name="email"
+            onChange={this.handleChanges}
+            value={this.state.teacher.email}
           />
 
           <input
