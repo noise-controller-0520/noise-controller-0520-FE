@@ -1,18 +1,45 @@
 import React from 'react';
 
-class ClassPage extends React.Component {
+import { connect } from "react-redux";
+
+class ClassesPage extends React.Component {
+    state = {
+        teachers:[],
+        inputField: ""
+    }
+
+    handleChanges = e => {
+        this.setState({
+            inputField: e.target.value
+        })
+    }
 
     render() {
         return (
             <div>
-                <ul>
-                    <li> Currently selected classroom </li>
-                    <li> List of classrooms </li>
-                    
-                </ul>
+                
+                <div>
+
+                </div>
+
+                <input 
+                onChange={this.handleChanges}
+                placeholder="Add another class..."
+                />
+
+                <button> Add </button>
+
             </div>
         )
     }
 }
 
-export default ClassPage;
+const mapStateToProps = state => {
+    return {
+        teachers: state.teachers
+    }
+}
+
+export default connect(
+    mapStateToProps
+)(ClassesPage);

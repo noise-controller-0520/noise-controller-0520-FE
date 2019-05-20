@@ -35,3 +35,53 @@ export const signUp = info => dispatch => {
         dispatch ({ type: SIGN_UP_FAILURE, payload: err.response })
     })
 }
+
+export const ADD_CLASSROOM_START = "ADD_CLASSROOM_START";
+export const ADD_CLASSROOM_SUCCESS = "ADD_CLASSROOM_SUCCESS"
+export const ADD_CLASSROOM_FAILURE = "ADD_CLASSROOM_FAILURE"
+
+export const addClassroom = newClassroom => dispatch => {
+    dispatch({ type: ADD_CLASSROOM_START })
+    axiosWithAuth()
+    .post('', newClassroom)
+    .then(res => {
+        dispatch ({ type: ADD_CLASSROOM_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+        dispatch ({ type: ADD_CLASSROOM_FAILURE, payload: err.response })
+    })
+}
+
+export const REMOVE_CLASSROOM_START = "REMOVE_CLASSROOM_START"
+export const REMOVE_CLASSROOM_START = "REMOVE_CLASSROOM_START"
+export const REMOVE_CLASSROOM_START = "REMOVE_CLASSROOM_START"
+
+export const removeClassroom = id => dispatch => {
+    dispatch({ type: REMOVE_CLASSROOM_START })
+    axiosWithAuth()
+    .delete('', id)
+    .then(res => {
+        dispatch ({ type: REMOVE_CLASSROOM_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+        dispatch ({ type: REMOVE_CLASSROOM_FAILURE, payload: err.response })
+    })
+}
+
+
+export const TOGGLE_CLASSROOM_START = "TOGGLE_CLASSROOM";
+export const TOGGLE_CLASSROOM_START = "TOGGLE_CLASSROOM";
+export const TOGGLE_CLASSROOM_START = "TOGGLE_CLASSROOM";
+
+export const toggleClassroom = id => dispatch => {
+    dispatch({ type: REMOVE_CLASSROOM_START })
+    axiosWithAuth()
+    .put('', id)
+    .then(res => {
+        dispatch ({ type: REMOVE_CLASSROOM_SUCCESS, payload: res.data })
+    })
+    .catch(err => {
+        dispatch ({ type: REMOVE_CLASSROOM_FAILURE, payload: err.response })
+    })
+}
+
