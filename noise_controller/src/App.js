@@ -22,11 +22,11 @@ function App() {
 
       <Route path="/login" component={Login} />
 
-      <PrivateRoute path="/classrooms" component={ClassPage} />
+      <PrivateRoute exact path="/classrooms" component={ClassPage} />
 
-      <PrivateRoute path="/main-page" component={MainPage} />
+      <PrivateRoute exact path="/main-page" component={MainPage} />
 
-      <PrivateRoute path="/scoreboard" component={Scoreboard} />
+      <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 
     </div>
     </Router>
