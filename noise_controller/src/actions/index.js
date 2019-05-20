@@ -6,7 +6,7 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const login = creds => dispatch => {
     dispatch({ type: LOGIN_START })
-    return axios.post( '', creds )
+    return axios.post( 'https://noise-controller-api.herokuapp.com/auth/login', creds )
     .then(res => {
         localStorage.setItem('token', res.data.payload)
         dispatch ({ type: LOGIN_SUCCESS, payload: res.data.payload })
@@ -23,7 +23,7 @@ export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 
 export const signUp = info => dispatch => {
     dispatch({ type: SIGN_UP_START })
-    return axios.post( '', info)
+    return axios.post( 'https://noise-controller-api.herokuapp.com/auth/register', info )
     .then(res => {
         dispatch ({ type: SIGN_UP_SUCCESS, payload: res.data })
     })

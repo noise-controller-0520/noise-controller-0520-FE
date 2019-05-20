@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
 import MainPage from './components/Main-page/MainPage';
 import Scoreboard from './components/Scoreboard/Scoreboard';
-
+import ClassPage from './components/Main-page/MainPage';
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
 
       <Route path="/login" component={Login} />
 
-      <PrivateRoute path="/classes" component={} />
+      <PrivateRoute path="/classrooms" component={ClassPage} />
 
       <PrivateRoute path="/main-page" component={MainPage} />
 
