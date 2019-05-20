@@ -11,7 +11,6 @@ import {
 } from '../actions';
 
 const initialState = {
-    teachers: [],
     addingClass: false,
     error: ''
 }

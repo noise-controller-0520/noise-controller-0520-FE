@@ -36,14 +36,15 @@ export const signUp = info => dispatch => {
     })
 }
 
-export const ADD_CLASSROOM_START = "ADD_CLASSROOM_START";
+
+export const ADD_CLASSROOM_START = "ADD_CLASSROOM_START"
 export const ADD_CLASSROOM_SUCCESS = "ADD_CLASSROOM_SUCCESS"
 export const ADD_CLASSROOM_FAILURE = "ADD_CLASSROOM_FAILURE"
 
 export const addClassroom = newClassroom => dispatch => {
     dispatch({ type: ADD_CLASSROOM_START })
     axiosWithAuth()
-    .post('', newClassroom)
+    .post(' https://noise-controller-api.herokuapp.com/classes', newClassroom)
     .then(res => {
         dispatch ({ type: ADD_CLASSROOM_SUCCESS, payload: res.data })
     })
@@ -59,7 +60,7 @@ export const REMOVE_CLASSROOM_START = "REMOVE_CLASSROOM_START"
 export const removeClassroom = id => dispatch => {
     dispatch({ type: REMOVE_CLASSROOM_START })
     axiosWithAuth()
-    .delete('', id)
+    .delete('https://noise-controller-api.herokuapp.com/:id', id)
     .then(res => {
         dispatch ({ type: REMOVE_CLASSROOM_SUCCESS, payload: res.data })
     })
@@ -76,7 +77,7 @@ export const TOGGLE_CLASSROOM_START = "TOGGLE_CLASSROOM";
 export const toggleClassroom = id => dispatch => {
     dispatch({ type: REMOVE_CLASSROOM_START })
     axiosWithAuth()
-    .put('', id)
+    .put('https://noise-controller-api.herokuapp.com/:id', id)
     .then(res => {
         dispatch ({ type: REMOVE_CLASSROOM_SUCCESS, payload: res.data })
     })

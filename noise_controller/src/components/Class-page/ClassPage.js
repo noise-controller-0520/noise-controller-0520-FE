@@ -1,45 +1,69 @@
-import React from 'react';
+import React from "react";
 
 import { connect } from "react-redux";
+import { addClassroom, removeClassroom, toggleClassroom } from "../../actions";
 
 class ClassesPage extends React.Component {
-    state = {
-        teachers:[],
-        inputField: ""
-    }
+  state = {
+    classrooms: [],
+    inputField: ""
+  };
 
-    handleChanges = e => {
-        this.setState({
-            inputField: e.target.value
-        })
-    }
+  handleChanges = e => {
+    this.setState({
+      inputField: e.target.value
+    });
+  };
 
-    render() {
-        return (
-            <div>
-                
-                <div>
+  addClassroom = e => {
+    e.preventDefault();
 
-                </div>
+    this.props.addClassroom(this.state.inputField);
+    this.setState({ inputField: "" });
+  };
 
-                <input 
-                onChange={this.handleChanges}
-                placeholder="Add another class..."
-                />
+  toggleClassroom = id => {
+    this.props.toggleClassroom(id);
+  };
 
-                <button> Add </button>
+  removeClassroom = id => {
+    this.props.removeClassroom(id);
+  };
 
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+
+        <div>
+          {this.props.classrooms &&
+            this.props.classrooms.map(classroom => (
+              <Classrooms
+                todo={classroom}
+                removeClassroom={this.removeClassroom}
+                toggleTodo={this.toggleClassroom}
+              />
+            ))}
+        </div>
+
+        <input
+          value={this.state.newClassroom}
+          onChange={this.handleChanges}
+          placeholder="Add another class..."
+        />
+
+        <button onClick={this.addClassroom}> Add </button>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
-    return {
-        teachers: state.teachers
-    }
-}
+  return {
+    classrooms: state.classrooms
+  };
+};
 
 export default connect(
-    mapStateToProps
+  mapStateToProps,
+  { addClassroom, removeClassroom, toggleClassroom }
 )(ClassesPage);
