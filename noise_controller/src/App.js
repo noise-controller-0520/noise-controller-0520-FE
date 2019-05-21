@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
 import MainPage from './components/Main-page/MainPage';
 import Scoreboard from './components/Scoreboard/Scoreboard';
-import ClassesPage from './components/Main-page/MainPage';
+import ClassesPage from './components/Class-page/ClassPage';
 
 function App() {
 
@@ -22,9 +22,9 @@ function App() {
 
       <Route path="/login" component={Login} />
 
-      <PrivateRoute exact path="/classrooms" component={ClassesPage} />
+      <Route path="/classrooms" component={ClassesPage} />
 
-      <PrivateRoute exact path="/main-page" component={MainPage} />
+      <Route path="/main-page" component={MainPage} />
 
       <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 

@@ -37,7 +37,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="background">
-        <form className="form-container">
+        <form onSubmit={this.signUp} className="form-container">
           <h1>Sign-up to Play!</h1>
           <input
             placeholder="First Name"

@@ -1,13 +1,16 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { addClassroom, removeClassroom, toggleClassroom } from "../../actions";
+import { addClassroom, deleteClassroom } from "../../actions";
+import Classrooms from './Classrooms';
+import './ClassPage.css';
 
 class ClassesPage extends React.Component {
   state = {
     classrooms: [],
     inputField: ""
   };
+
 
   handleChanges = e => {
     this.setState({
@@ -22,25 +25,21 @@ class ClassesPage extends React.Component {
     this.setState({ inputField: "" });
   };
 
-  toggleClassroom = id => {
-    this.props.toggleClassroom(id);
-  };
-
-  removeClassroom = id => {
-    this.props.removeClassroom(id);
+  deleteClassroom = id => {
+    this.props.deleteClassroom(id);
   };
 
   render() {
+      console.log(this.state.classrooms)
     return (
       <div>
 
-        <div>
+        <div className="classrooms-list">
           {this.props.classrooms &&
             this.props.classrooms.map(classroom => (
               <Classrooms
-                todo={classroom}
-                removeClassroom={this.removeClassroom}
-                toggleTodo={this.toggleClassroom}
+                classroom={classroom}
+                deleteClassroom={this.deleteClassroom}
               />
             ))}
         </div>
@@ -65,5 +64,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addClassroom, removeClassroom, toggleClassroom }
+  { addClassroom, deleteClassroom }
 )(ClassesPage);
