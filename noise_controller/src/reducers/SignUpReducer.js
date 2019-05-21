@@ -22,7 +22,7 @@ switch (action.type) {
     return {
         ...state,
         signingUp: false,
-        teachers: [...this.state.teachers, action.payload]
+        teachers: [...state.teachers, action.payload]
     }
  
     case SIGN_UP_FAILURE:

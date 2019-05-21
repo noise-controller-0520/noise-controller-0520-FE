@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
 import MainPage from './components/Main-page/MainPage';
 import Scoreboard from './components/Scoreboard/Scoreboard';
-
+import ClassesPage from './components/Class-page/ClassesPage';
 
 function App() {
 
@@ -18,13 +18,15 @@ function App() {
     <div className="App">
       <NavBar />
 
-      <Route path="/sign-up" component={SignUp} />
+      <Route path="/register" component={SignUp} />
 
       <Route path="/login" component={Login} />
 
-      <PrivateRoute path="/main-page" component={MainPage} />
+      <PrivateRoute exact path="/classrooms" component={ClassesPage} />
 
-      <PrivateRoute path="/scoreboard" component={Scoreboard} />
+      <PrivateRoute exact path="/main-page" component={MainPage} />
+
+      <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 
     </div>
     </Router>

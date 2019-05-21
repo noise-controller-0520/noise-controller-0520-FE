@@ -7,9 +7,11 @@ function NavBar() {
   return (
     <nav>
      
-        <Link to="/sign-up"> Sign-Up </Link>
+        <Link to="/register"> Sign-Up </Link>
       
         <Link to="/login"> Login </Link>
+        
+        <Link to="/classrooms"> Classrooms </Link>
      
         <Link to="/main-page"> Play </Link>
 

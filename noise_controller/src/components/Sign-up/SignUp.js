@@ -8,10 +8,9 @@ import { signUp } from "../../actions";
 class SignUp extends React.Component {
   state = {
     teacher: {
-      firstName: "",
-      lastName: "",
+      first_name: "",
+      last_name: "",
       email: "",
-      className: "",
       username: "",
       password: ""
     }
@@ -37,39 +36,36 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="background">
-        <form className="form-container">
+        <form onSubmit={this.signUp} className="form-container">
           <h1>Sign-up to Play!</h1>
           <input
             placeholder="First Name"
-            name="firstName"
+            name="first_name"
+            required
             onChange={this.handleChanges}
-            value={this.state.teacher.firstName}
+            value={this.state.teacher.first_name}
           />
 
           <input
             placeholder="Last Name"
-            name="lastName"
+            name="last_name"
+            required
             onChange={this.handleChanges}
-            value={this.state.teacher.lastName}
+            value={this.state.teacher.last_name}
           />
 
           <input
             placeholder="Email"
             name="email"
+            required
             onChange={this.handleChanges}
             value={this.state.teacher.email}
           />
 
           <input
-            placeholder="Class Name"
-            name="className"
-            onChange={this.handleChanges}
-            value={this.state.teacher.className}
-          />
-
-          <input
             placeholder="Username"
             name="username"
+            required
             onChange={this.handleChanges}
             value={this.state.teacher.username}
           />
@@ -77,6 +73,7 @@ class SignUp extends React.Component {
           <input
             placeholder="Password"
             name="password"
+            required
             onChange={this.handleChanges}
             value={this.state.teacher.password}
           />
