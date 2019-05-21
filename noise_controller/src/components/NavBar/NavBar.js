@@ -4,6 +4,13 @@ import './NavBar.css';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
+
+ // const logout = () => {
+ //   localStorage.removeItem('token')
+ //   localStorage.removeItem('teacher')
+ //   props.history.push('/login')
+ // }
+
   return (
     <nav>
      
@@ -16,7 +23,7 @@ function NavBar() {
         <Link to="/main-page"> Play </Link>
 
         <Link to="/scoreboard"> Scoreboard </Link>
-      
+
     </nav>
   );
 }

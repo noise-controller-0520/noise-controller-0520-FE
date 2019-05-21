@@ -7,7 +7,6 @@ import "./ClassesPage.css";
 
 class ClassesPage extends React.Component {
   state = {
-    classrooms: [],
     inputField: ""
   };
 
@@ -26,7 +25,12 @@ class ClassesPage extends React.Component {
   addClassroom = e => {
     e.preventDefault();
 
-    this.props.addClassroom(this.state.inputField);
+    const newClass = {
+      class_name: this.state.inputField,
+      teacher_id: localStorage.getItem("teacher")
+    }
+
+    this.props.addClassroom(newClass);
     this.setState({ inputField: "" });
   };
 
@@ -35,7 +39,7 @@ class ClassesPage extends React.Component {
   };
 
   render() {
-    console.log(this.state.classrooms);
+    console.log(this.props.classrooms)
     return (
       <div>
         <div className="classrooms-list">
@@ -53,7 +57,7 @@ class ClassesPage extends React.Component {
           placeholder="Add another class..."
         />
 
-        <button onClick={this.addClassroom}> Add </button>
+        <button onClick={this.addClassroom} > Add </button>
       </div>
     );
   }
@@ -61,7 +65,7 @@ class ClassesPage extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    classrooms: state.classrooms
+    classrooms: state.ClassroomsReducer.classrooms
   };
 };
 
@@ -69,3 +73,4 @@ export default connect(
   mapStateToProps,
   { addClassroom, deleteClassroom, getClassroom }
 )(ClassesPage);
+

@@ -3,6 +3,7 @@ import React from "react";
 import './Classrooms.css';
 
 function Classrooms(props) {
+    console.log(props)
     
   const deleteClassroom = event => {
     event.stopPropagation();
@@ -15,7 +16,7 @@ function Classrooms(props) {
     <div>
       <h3>
 
-        {props.classroom.classroom}
+        {props.classroom.class_name}
 
         <button onClick={deleteClassroom} key={props.classroom.id}>
         Delete Classroom
