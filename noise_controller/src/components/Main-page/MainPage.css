@@ -13,3 +13,13 @@
     margin-left: 20px;
     align-items: center;
   }
+
+  .top-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .timer {
+    margin-top: 70px;
+  }

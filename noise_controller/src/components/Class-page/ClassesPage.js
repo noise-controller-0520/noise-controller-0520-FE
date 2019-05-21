@@ -1,9 +1,9 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { addClassroom, deleteClassroom } from "../../actions";
-import Classrooms from './Classrooms';
-import './ClassPage.css';
+import { addClassroom, deleteClassroom, getClassroom } from "../../actions";
+import Classrooms from "./Classrooms";
+import "./ClassesPage.css";
 
 class ClassesPage extends React.Component {
   state = {
@@ -11,12 +11,17 @@ class ClassesPage extends React.Component {
     inputField: ""
   };
 
-
   handleChanges = e => {
     this.setState({
       inputField: e.target.value
     });
   };
+
+
+  componentDidMount() {
+    const teacherId = localStorage.getItem("teacher");
+    this.props.getClassroom(teacherId);
+  }
 
   addClassroom = e => {
     e.preventDefault();
@@ -30,18 +35,16 @@ class ClassesPage extends React.Component {
   };
 
   render() {
-      console.log(this.state.classrooms)
+    console.log(this.state.classrooms);
     return (
       <div>
-
         <div className="classrooms-list">
-          {this.props.classrooms &&
-            this.props.classrooms.map(classroom => (
-              <Classrooms
-                classroom={classroom}
-                deleteClassroom={this.deleteClassroom}
-              />
-            ))}
+          {this.props.classrooms && this.props.classrooms.map(classroom => (
+            <Classrooms
+              classroom={classroom}
+              deleteClassroom={this.deleteClassroom}
+            />
+          ))}
         </div>
 
         <input
@@ -64,5 +67,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addClassroom, deleteClassroom }
+  { addClassroom, deleteClassroom, getClassroom }
 )(ClassesPage);

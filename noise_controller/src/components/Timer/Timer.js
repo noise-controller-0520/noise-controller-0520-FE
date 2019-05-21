@@ -1,31 +1,36 @@
 import React from "react";
+import "./Timer.css";
 
 class Timer extends React.Component {
-  state = {
-    count: 0
-  };
-
-  componentDidMount(){
-      this.myInterval = setInterval(() =>{
-        this.setState(prevState => ({
-            count: prevState.count + 1
-        }))
-      }, 1000)
+  constructor() {
+    super();
+    this.state = {
+      minute: 0,
+      second: 0
+    };
   }
-
-  componentWillUnmount(){
-      clearInterval(this.myInterval)
+  componentDidMount() {
+    setInterval(() => {
+      return this.setState((state, props) => {
+        return {
+          second: state.second === 59 ? 0 : state.second + 1,
+          minute: state.minute === 59 ? state.minute + 1 : state.minute
+        };
+      });
+    }, 1000);
   }
 
   render() {
-    const { count } = this.state;
     return (
-      <div>
-        <h2> Time: {count} </h2>
+      <div className="stopwatch">
+        <div>
+          {" "}
+          Time: {this.state.minute}:{this.state.second}{" "}
+        </div>
+        <button> Stop </button>
       </div>
     );
   }
-
 }
 
 export default Timer;

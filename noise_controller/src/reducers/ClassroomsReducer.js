@@ -4,17 +4,20 @@ import {
    ADD_CLASSROOM_FAILURE,
    DELETE_CLASSROOM_START,
    DELETE_CLASSROOM_SUCCESS,
-   DELETE_CLASSROOM_FAILURE
+   DELETE_CLASSROOM_FAILURE,
+   FETCH_CLASSROOM_START,
+   FETCH_CLASSROOM_SUCCESS
 } from '../actions';
 
 const initialState = {
     classrooms: [
-        {classroom: '5th Period Geometry', id: 0 },
-        {classroom: '3rd Period Literature', id:1 }
+      //  {classroom: '5th Period Geometry', id: 0 },
+      //  {classroom: '3rd Period Literature', id:1 }
     ],
-    count:1,
     addingClass: false,
-    error: ''
+    error: '',
+    count: 1,
+    fetchingClassrooms: false
 }
 
 export const ClassroomsReducer = ( state = initialState, action ) => {
@@ -56,6 +59,20 @@ switch (action.type) {
         ...state,
         error: action.payload
     }
+
+    case FETCH_CLASSROOM_START:
+    return {
+      ...state,
+      fetchingClassrooms: true
+    };
+  case FETCH_CLASSROOM_SUCCESS:
+    return {
+      ...state,
+      error: '',
+      errorStatusCode: null,
+      fetchingClassrooms: false,
+      friends: action.payload
+    };
 
     default:
     return state;

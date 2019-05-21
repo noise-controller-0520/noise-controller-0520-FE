@@ -5,7 +5,7 @@ import Timer from '../Timer/Timer';
 class MainPage extends React.Component {
   render() {
     return (
-      <div>
+      <div className='top-section'>
 
         <div className="welcome-section">
           <div className="user-container">
@@ -17,7 +17,9 @@ class MainPage extends React.Component {
           </div>
         </div>
 
+        <div className='timer'>
         <Timer/>
+        </div>
 
 
       </div>
