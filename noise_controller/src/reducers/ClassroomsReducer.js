@@ -13,7 +13,8 @@ const initialState = {
   classrooms: [],
   addingClass: false,
   error: "",
-  fetchingClassrooms: false
+  fetchingClassrooms: false,
+  deletingClass: false,
 };
 
 export const ClassroomsReducer = (state = initialState, action) => {
@@ -40,16 +41,19 @@ export const ClassroomsReducer = (state = initialState, action) => {
     case DELETE_CLASSROOM_START:
       return {
         ...state,
+        deletingClass: true,
         error: ""
       };
     case DELETE_CLASSROOM_SUCCESS:
-      return {
+    return {
         ...state,
-        error: ""
+        deletingClass: false,
+        classrooms: state.classrooms.filter( classroom => classroom.id !== action.payload )
       };
     case DELETE_CLASSROOM_FAILURE:
       return {
         ...state,
+        deletingClass: false,
         error: action.payload
       };
 

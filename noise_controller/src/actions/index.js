@@ -58,9 +58,10 @@ export const DELETE_CLASSROOM_FAILURE = "DELETE_CLASSROOM_FAILURE";
 export const deleteClassroom = id => dispatch => {
   dispatch({ type: DELETE_CLASSROOM_START });
   axiosWithAuth()
-    .delete(`https://noise-controller-api.herokuapp.com/sessions/${id}`)
+    .delete(`https://noise-controller-api.herokuapp.com/classes/${id}`)
     .then(res => {
-      dispatch({ type: DELETE_CLASSROOM_SUCCESS, payload: res.data });
+        console.log(res)
+      dispatch({ type: DELETE_CLASSROOM_SUCCESS, payload: id });
     })
     .catch(err => {
       dispatch({ type: DELETE_CLASSROOM_FAILURE, payload: err.response });

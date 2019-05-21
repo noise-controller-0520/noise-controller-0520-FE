@@ -24,7 +24,7 @@ function App() {
 
       <PrivateRoute exact path="/classrooms" component={ClassesPage} />
 
-      <PrivateRoute exact path="/main-page" component={MainPage} />
+      <PrivateRoute exact path="/main-page/:id" component={MainPage} />
 
       <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 
