@@ -2,8 +2,8 @@ import React from "react";
 import "./ScoresPage.css";
 import { connect } from "react-redux";
 import { getScores } from "../../actions";
-import PastScores from "./PastScores";
-import DailyHighScore from './DailyHighScore';
+// import PastScores from "./PastScores";
+import Scores from './Scores';
 
 class ScoresPage extends React.Component {
   
@@ -14,6 +14,7 @@ class ScoresPage extends React.Component {
   }
 
   render() {
+    console.log(this.props.scores)
     return (
       <div>
 
@@ -22,19 +23,12 @@ class ScoresPage extends React.Component {
        
           {this.props.scores &&
             this.props.scores.map(score => (
-              <DailyHighScore score={score} />
+              <Scores score={score} />
             ))}
 
         </div>
 
-        <div>
-          <h1> Old Scores </h1>
-
-           
-            <PastScores /> 
-           
-        </div>
-
+          
       </div>
     );
   }
@@ -42,7 +36,7 @@ class ScoresPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-   //   scores: state.ScoresReducer.scores
+      scores: state.ScoresReducer.scores
     };
   };
   

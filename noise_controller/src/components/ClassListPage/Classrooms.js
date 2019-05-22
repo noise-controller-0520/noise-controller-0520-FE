@@ -16,8 +16,9 @@ function Classrooms(props) {
   }
 
   const checkScores = id => {
-      props.history.push(`/scoreboard/${id}`)
-  }
+    localStorage.setItem('class', id)
+    props.history.push(`/scoreboard/${id}`)
+}
 
   return (
     <div className='classrooms'>

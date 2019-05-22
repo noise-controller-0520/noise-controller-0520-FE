@@ -106,6 +106,6 @@ export const getScores = id => dispatch => {
       dispatch({ type: FETCH_SCORES_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      dispatch({ type: FETCH_CLASSROOM_FAILURE, payload: err.response });
+      dispatch({ type: FETCH_SCORES_FAILURE, payload: err.response });
     });
 };
