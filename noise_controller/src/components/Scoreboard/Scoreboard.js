@@ -1,41 +1,36 @@
 import React from "react";
-import './Scoreboard.css';
+import "./Scoreboard.css";
 import { connect } from "react-redux";
 import { getScores } from "../../actions";
+import PastScores from "./PastScores";
 
 class ScoreBoard extends React.Component {
-state = {
-    scores:[]
-}
-
-componentDidMount() {
-    const teacherId = localStorage.getItem("teacher");
-    this.props.getScores(teacherId);
+    
+  componentDidMount() {
+    const classId = localStorage.getItem("class");
+    this.props.getScore(classId);
   }
 
   render() {
     return (
       <div>
-    
-        <h1> Daily Scores </h1>
+        <div>
+          <h1> Daily Scores </h1>
 
-        <h1> Past Scores </h1>
+          {this.props.scores.daily_score}
+        </div>
 
+        <div>
+          <h1> Past Scores </h1>
 
+          {this.props.scores &&
+            this.props.scores.map(score => <PastScores score={score} />)}
+        </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-    scores: state.ScoresReducer.scores
-  });
-  
-
-  export default connect(
-    mapStateToProps,
-    {
-        getScores
-    }
-  )(ScoreBoard);
-  
+export default connect({
+  getScores
+})(ScoreBoard);
