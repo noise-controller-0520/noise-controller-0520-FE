@@ -1,6 +1,5 @@
 import React from "react";
 import "./MainPage.css";
-import Timer from '../Timer/Timer';
 
 class MainPage extends React.Component {
   render() {
@@ -15,10 +14,6 @@ class MainPage extends React.Component {
           <div className="user-container">
             <div> Class... ClassName </div>
           </div>
-        </div>
-
-        <div className='timer'>
-        <Timer/>
         </div>
 
 

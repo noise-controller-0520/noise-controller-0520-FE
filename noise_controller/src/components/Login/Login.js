@@ -54,7 +54,7 @@ class Login extends React.Component {
 
           <button className="login-button" onClick={this.login}>
             {" "}
-            Log in{" "}
+            Login{" "}
           </button>
         </div>
       </div>
