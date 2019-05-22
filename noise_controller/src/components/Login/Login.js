@@ -11,6 +11,12 @@ class Login extends React.Component {
     }
   };
 
+  componentDidMount() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('teacher');
+  }
+
+
   handleChanges = e => {
     this.setState({
       credentials: {
@@ -19,7 +25,6 @@ class Login extends React.Component {
       }
     });
   };
-
   login = e => {
     e.preventDefault();
 
@@ -59,7 +64,7 @@ class Login extends React.Component {
 
           <button className="login-button" onClick={this.login}>
             {" "}
-            Log in{" "}
+            Login{" "}
           </button>
         </div>
       </div>
