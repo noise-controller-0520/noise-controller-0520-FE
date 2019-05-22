@@ -9,7 +9,7 @@ class MainPage extends React.Component {
 
         <div className="welcome-section">
           <div className="user-container">
-            <div> Welcome... TeacherName </div>
+            <div> Welcome...  </div>
           </div>
 
           <div className="user-container">
@@ -26,5 +26,7 @@ class MainPage extends React.Component {
     );
   }
 }
+
+
 
 export default MainPage;

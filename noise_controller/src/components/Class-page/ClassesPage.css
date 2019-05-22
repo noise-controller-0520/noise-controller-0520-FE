@@ -1,7 +1,37 @@
-input {
-    margin-top: 50px;
+.class-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    padding: 10px;
+    margin-top: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.class-button {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .classrooms-list {
-    margin-top: 60px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.login-input {
+    background: lightgrey;
+}
+
+h3 {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    margin-top: 400px;
 }

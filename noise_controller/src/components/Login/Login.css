@@ -3,24 +3,42 @@
   max-width: 1000px;
   display: flex;
   flex-direction: column;
-  padding: 40px;
-  border: 1px solid whitesmoke;
-  border-radius: 5px;
-
-  background-color: rgba(128, 128, 128, 0.897);
+  padding: 30px;
+  margin-top: 90px;
+  background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
 }
 
 .background2 {
-    width: 100%;
-    background-image: url('../../img/animals-cute-little-1359342.jpg');
-    background-position: bottom center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-  
-    padding: 220px 20px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+html {
+  background: url("../../img/animals-cute-little-1359342.jpg") no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-button {
+  height: 40px;
+  width: 200px;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.align-form {
+  text-align: left;
+  line-height: 0;
+  color: white;
+}
+
+footer {
+  margin-top: 140px;
+}

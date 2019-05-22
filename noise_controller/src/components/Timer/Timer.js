@@ -14,7 +14,7 @@ class Timer extends React.Component {
       return this.setState((state, props) => {
         return {
           second: state.second === 59 ? 0 : state.second + 1,
-          minute: state.minute === 59 ? state.minute + 1 : state.minute
+          minute: state.second === 59 ? state.minute + 1 : state.minute
         };
       });
     }, 1000);

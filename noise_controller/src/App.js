@@ -24,10 +24,14 @@ function App() {
 
       <PrivateRoute exact path="/classrooms" component={ClassesPage} />
 
-      <PrivateRoute exact path="/main-page" component={MainPage} />
+      <PrivateRoute exact path="/main-page/:id" component={MainPage} />
 
       <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 
+
+      <footer>
+				<p>&copy;Noise-Listener. All Rights Reserved</p>
+			</footer>
     </div>
     </Router>
   );

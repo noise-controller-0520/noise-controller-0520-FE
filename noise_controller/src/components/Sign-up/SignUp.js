@@ -36,49 +36,53 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="background">
+        
         <form onSubmit={this.signUp} className="form-container">
           <h1>Sign-up to Play!</h1>
+          
+          <div className='align-form'>
+          <p>First Name</p>
           <input
-            placeholder="First Name"
             name="first_name"
             required
             onChange={this.handleChanges}
             value={this.state.teacher.first_name}
           />
 
+          <p>Last Name</p>
           <input
-            placeholder="Last Name"
             name="last_name"
             required
             onChange={this.handleChanges}
             value={this.state.teacher.last_name}
           />
 
+          <p>Email</p>
           <input
-            placeholder="Email"
             name="email"
             required
             onChange={this.handleChanges}
             value={this.state.teacher.email}
           />
 
+          <p>Username</p>
           <input
-            placeholder="Username"
             name="username"
             required
             onChange={this.handleChanges}
             value={this.state.teacher.username}
           />
 
+          <p>Password</p>
           <input
-            placeholder="Password"
             name="password"
             required
             onChange={this.handleChanges}
             value={this.state.teacher.password}
           />
+          </div>
 
-          <button> Submit </button>
+          <button className="submit-button"> submit </button>
         </form>
       </div>
     );
