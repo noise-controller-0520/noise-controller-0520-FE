@@ -18,8 +18,8 @@ class ScoresPage extends React.Component {
     return (
       <div>
 
-        <div>
-          <h1> Daily Scores </h1>
+        <div className='scores'>
+          <h1> Today's Scores </h1>
        
           {this.props.scores &&
             this.props.scores.map(score => (

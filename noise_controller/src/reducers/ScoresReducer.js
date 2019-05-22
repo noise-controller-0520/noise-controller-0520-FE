@@ -23,7 +23,7 @@ export const ScoresReducer = ( state = initialState, action ) => {
         case FETCH_SCORES_SUCCESS: 
         return {
             ...state,
-            scores: [...state.scores, action.payload],
+            scores: action.payload,
             fetchingScores: false,
             error: ''
         }
