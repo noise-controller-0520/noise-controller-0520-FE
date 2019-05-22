@@ -24,7 +24,12 @@ class Login extends React.Component {
     e.preventDefault();
 
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/classrooms");
+      if (localStorage.getItem('token')) {
+        this.props.history.push("/classrooms");
+      }
+      else {
+        // Flash a message saying Invalid Credentials or something like that
+      }
     });
   };
 
