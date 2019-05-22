@@ -1,16 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-function PastScores(props) {
-console.log(props)
+function DailyHighScore(props) {
+
 
     return (
         <div>
-            wat
+           Daily High Score 
         </div>
     )
 }
 
-export default withRouter(PastScores);
+export default withRouter(DailyHighScore);
 
 

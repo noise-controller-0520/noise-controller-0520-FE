@@ -15,6 +15,7 @@ export const login = creds => dispatch => {
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
+        console.log(err)
       dispatch({ type: LOGIN_FAILURE, payload: err.response });
     });
 };
@@ -92,15 +93,16 @@ export const getClassroom = id => dispatch => {
     });
 };
 
-export const FETCH_SCORES_START = "FETCH_DATA_START";
-export const FETCH_SCORES_SUCCESS = "FETCH_DATA_SUCCESS";
-export const FETCH_SCORES_FAILURE = "FETCH_DATA_FAILURE";
+export const FETCH_SCORES_START = "FETCH_SCORES_START";
+export const FETCH_SCORES_SUCCESS = "FETCH_SCORES_SUCCESS";
+export const FETCH_SCORES_FAILURE = "FETCH_SCORES_FAILURE";
 
 export const getScores = id => dispatch => {
   dispatch({ type: FETCH_SCORES_START });
   axiosWithAuth()
     .get(`https://noise-controller-api.herokuapp.com/sessions/${id}`)
     .then(res => {
+        console.log("res", res)
       dispatch({ type: FETCH_SCORES_SUCCESS, payload: res.data });
     })
     .catch(err => {
