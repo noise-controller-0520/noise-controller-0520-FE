@@ -16,7 +16,6 @@ class ClassesPage extends React.Component {
     });
   };
 
-
   componentDidMount() {
     const teacherId = localStorage.getItem("teacher");
     this.props.getClassroom(teacherId);
@@ -28,7 +27,7 @@ class ClassesPage extends React.Component {
     const newClass = {
       class_name: this.state.inputField,
       teacher_id: localStorage.getItem("teacher")
-    }
+    };
 
     this.props.addClassroom(newClass);
     this.setState({ inputField: "" });
@@ -39,25 +38,31 @@ class ClassesPage extends React.Component {
   };
 
   render() {
-    console.log(this.props.classrooms)
+    console.log(this.props.classrooms);
     return (
       <div>
-        <div className="classrooms-list">
-          {this.props.classrooms && this.props.classrooms.map(classroom => (
-            <Classrooms
-              classroom={classroom}
-              deleteClassroom={this.deleteClassroom}
-            />
-          ))}
+        <div className="class-input">
+          <h3>Add New Classroom</h3>
+          <input
+            className='login-input'
+            value={this.state.newClassroom}
+            onChange={this.handleChanges}
+            placeholder="Add another class..."
+          />
+
+          <button className="class-button" onClick={this.addClassroom}> Add </button>
         </div>
 
-        <input
-          value={this.state.newClassroom}
-          onChange={this.handleChanges}
-          placeholder="Add another class..."
-        />
+        <div className="classrooms-list">
+          {this.props.classrooms &&
+            this.props.classrooms.map(classroom => (
+              <Classrooms
+                classroom={classroom}
+                deleteClassroom={this.deleteClassroom}
+              />
+            ))}
+        </div>
 
-        <button onClick={this.addClassroom} > Add </button>
       </div>
     );
   }
@@ -73,4 +78,3 @@ export default connect(
   mapStateToProps,
   { addClassroom, deleteClassroom, getClassroom }
 )(ClassesPage);
-

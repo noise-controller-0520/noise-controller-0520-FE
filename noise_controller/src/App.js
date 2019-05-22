@@ -28,6 +28,10 @@ function App() {
 
       <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
 
+
+      <footer>
+				<p>&copy;Noise-Listener. All Rights Reserved</p>
+			</footer>
     </div>
     </Router>
   );
