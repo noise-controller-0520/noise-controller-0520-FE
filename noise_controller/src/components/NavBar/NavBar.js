@@ -20,7 +20,7 @@ function NavBar() {
         
         <Link to="/classrooms"> Classrooms </Link>
      
-        <Link to="/main-page"> Play </Link>
+        <Link to="/main-page/:id"> Play </Link>
 
         <Link to="/scoreboard"> Scoreboard </Link>
 

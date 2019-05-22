@@ -11,6 +11,12 @@ class Login extends React.Component {
     }
   };
 
+  componentDidMount() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('teacher');
+  }
+
+
   handleChanges = e => {
     this.setState({
       credentials: {
@@ -19,12 +25,16 @@ class Login extends React.Component {
       }
     });
   };
-
   login = e => {
     e.preventDefault();
 
     this.props.login(this.state.credentials).then(() => {
-      this.props.history.push("/classrooms");
+      if (localStorage.getItem('token')) {
+        this.props.history.push("/classrooms");
+      }
+      else {
+        // Flash a message saying Invalid Credentials or something like that
+      }
     });
   };
 
@@ -54,7 +64,7 @@ class Login extends React.Component {
 
           <button className="login-button" onClick={this.login}>
             {" "}
-            Log in{" "}
+            Login{" "}
           </button>
         </div>
       </div>

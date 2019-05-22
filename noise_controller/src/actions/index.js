@@ -9,12 +9,13 @@ export const login = creds => dispatch => {
   return axiosWithAuth()
     .post("https://noise-controller-api.herokuapp.com/auth/login", creds)
     .then(res => {
-        console.log(res)
+      console.log(res);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("teacher", res.data.teacher.id);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
+        console.log(err)
       dispatch({ type: LOGIN_FAILURE, payload: err.response });
     });
 };
@@ -42,8 +43,10 @@ export const ADD_CLASSROOM_FAILURE = "ADD_CLASSROOM_FAILURE";
 export const addClassroom = newClassroom => dispatch => {
   dispatch({ type: ADD_CLASSROOM_START });
   axiosWithAuth()
-    .post("https://noise-controller-api.herokuapp.com/classes", newClassroom )
+    .post("https://noise-controller-api.herokuapp.com/classes", newClassroom)
     .then(res => {
+        console.log(res)
+      localStorage.setItem("class", res.data.id);
       dispatch({ type: ADD_CLASSROOM_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -60,7 +63,7 @@ export const deleteClassroom = id => dispatch => {
   axiosWithAuth()
     .delete(`https://noise-controller-api.herokuapp.com/classes/${id}`)
     .then(res => {
-        console.log(res)
+      console.log(res);
       dispatch({ type: DELETE_CLASSROOM_SUCCESS, payload: id });
     })
     .catch(err => {
@@ -68,25 +71,41 @@ export const deleteClassroom = id => dispatch => {
     });
 };
 
-
-export const FETCH_CLASSROOM_START = 'FETCH_DATA_START';
-export const FETCH_CLASSROOM_SUCCESS = 'FETCH_DATA_SUCCESS';
-export const FETCH_CLASSROOM_FAILURE = 'FETCH_DATA_FAILURE';
-export const USER_UNAUTHORIZED = 'FETCH_DATA_FAILURE';
+export const FETCH_CLASSROOM_START = "FETCH_DATA_START";
+export const FETCH_CLASSROOM_SUCCESS = "FETCH_DATA_SUCCESS";
+export const FETCH_CLASSROOM_FAILURE = "FETCH_DATA_FAILURE";
+export const USER_UNAUTHORIZED = "FETCH_DATA_FAILURE";
 
 export const getClassroom = id => dispatch => {
   dispatch({ type: FETCH_CLASSROOM_START });
   axiosWithAuth()
-    .get( `https://noise-controller-api.herokuapp.com/classes/${id}` )
+    .get(`https://noise-controller-api.herokuapp.com/classes/${id}`)
     .then(res => {
       dispatch({ type: FETCH_CLASSROOM_SUCCESS, payload: res.data });
     })
     .catch(err => {
-      console.log('call failed: ', err.response);
+      console.log("call failed: ", err.response);
       if (err.response.status === 403) {
         dispatch({ type: USER_UNAUTHORIZED, payload: err.response });
       } else {
         dispatch({ type: FETCH_CLASSROOM_FAILURE, payload: err.response });
       }
+    });
+};
+
+export const FETCH_SCORES_START = "FETCH_SCORES_START";
+export const FETCH_SCORES_SUCCESS = "FETCH_SCORES_SUCCESS";
+export const FETCH_SCORES_FAILURE = "FETCH_SCORES_FAILURE";
+
+export const getScores = id => dispatch => {
+  dispatch({ type: FETCH_SCORES_START });
+  axiosWithAuth()
+    .get(`https://noise-controller-api.herokuapp.com/sessions/${id}`)
+    .then(res => {
+        console.log("res", res)
+      dispatch({ type: FETCH_SCORES_SUCCESS, payload: res.data });
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_CLASSROOM_FAILURE, payload: err.response });
     });
 };

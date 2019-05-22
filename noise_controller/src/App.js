@@ -8,8 +8,8 @@ import SignUp from './components/Sign-up/SignUp';
 import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
 import MainPage from './components/Main-page/MainPage';
-import Scoreboard from './components/Scoreboard/Scoreboard';
-import ClassesPage from './components/Class-page/ClassesPage';
+import ScoresPage from './components/Scoreboard/ScoresPage';
+import ClassesPage from './components/Class-page/ClassListPage';
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
 
       <PrivateRoute exact path="/main-page/:id" component={MainPage} />
 
-      <PrivateRoute exact path="/scoreboard" component={Scoreboard} />
+      <PrivateRoute path="/scoreboard/" component={ScoresPage} />
 
 
       <footer>

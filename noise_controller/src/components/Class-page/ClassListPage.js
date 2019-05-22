@@ -7,6 +7,7 @@ import "./ClassesPage.css";
 
 class ClassesPage extends React.Component {
   state = {
+    classrooms: [],
     inputField: ""
   };
 
@@ -22,7 +23,6 @@ class ClassesPage extends React.Component {
   }
 
   addClassroom = e => {
-    e.preventDefault();
 
     const newClass = {
       class_name: this.state.inputField,
