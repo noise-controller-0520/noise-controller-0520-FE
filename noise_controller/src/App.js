@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/Sign-up/SignUp';
 import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
-import MainPage from './components/Main-page/MainPage';
+import GamePage from './components/GamePage/GamePage';
 import ScoresPage from './components/Scoreboard/ScoresPage';
 import ClassesPage from './components/ClassListPage/ClassListPage';
 
@@ -24,7 +24,7 @@ function App() {
 
       <PrivateRoute exact path="/classrooms" component={ClassesPage} />
 
-      <PrivateRoute exact path="/main-page/:id" component={MainPage} />
+      <PrivateRoute exact path="/game-page/:id" component={GamePage} />
 
       <PrivateRoute path="/scoreboard/" component={ScoresPage} />
 
