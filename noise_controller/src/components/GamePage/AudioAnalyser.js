@@ -115,7 +115,7 @@ class AudioAnalyser extends React.Component {
 			<div>
 				{/* <AudioAnimation first={this.state.first} second={this.state.second} /> */}
 
-				<div>This counter will go up if you are too loud!!! {this.state.violations}</div>
+				{/* <div>This counter will go up if you are too loud!!! {this.state.violations}</div> */}
 				<div>Threshold: {this.state.threshDescription} </div>
 
 				<Slider
@@ -129,9 +129,6 @@ class AudioAnalyser extends React.Component {
 				<div className="levels" />
 
 				<input type="number" onChange={this.timerChanges} name="timeOut" value={this.state.timeOut} />
-				{this.state.animals && 
-				this.state.animals.map(animal => 'animal')
-				}
 			</div>
 		);
 	}
