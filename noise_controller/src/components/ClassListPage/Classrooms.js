@@ -16,8 +16,9 @@ function Classrooms(props) {
   }
 
   const checkScores = id => {
-      props.history.push(`/scoreboard/${id}`)
-  }
+    localStorage.setItem('class', id)
+    props.history.push(`/scoreboard/${id}`)
+}
 
   return (
     <div className='classrooms'>
@@ -29,7 +30,7 @@ function Classrooms(props) {
           Delete
         </button>
 
-        <button onClick={() => checkScores(props.classroom.id) }> 
+        <button className='classy-button' onClick={() => checkScores(props.classroom.id) }> 
             Check Scores
         </button>
 
