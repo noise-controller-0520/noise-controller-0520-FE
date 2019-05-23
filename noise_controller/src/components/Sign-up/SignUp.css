@@ -57,6 +57,7 @@ input {
 }
 
 .submit-button {
+  cursor: pointer;
   height:40px;
   width: 200px;
   padding: 10px;
