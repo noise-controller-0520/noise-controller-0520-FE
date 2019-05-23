@@ -1,44 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+* {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
 .login-container {
-  width: 300px;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  margin-top: 90px;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
+	width: 300px;
+	max-width: 90%;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	margin-top: 90px;
+	background-color: #222948;
+	box-shadow: 0 0 10px black;
+	align-items: center;
 }
 
-.background2 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-html {
-  background: url("../../img/animals-cute-little-1359342.jpg") no-repeat center
-    center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.login-button {
-  height: 40px;
-  width: 200px;
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 20px;
-  background-color: white;
+@media only screen and (max-width: 500px) {
+	.login-container {
+		width: 100%;
+		box-shadow: none;
+	}
 }
 
 .align-form {
-  text-align: left;
-  line-height: 0;
-  color: white;
+	max-width: 95%;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	color: white;
+}
+
+.background2 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	height: 45vh;
+}
+
+html {
+	background: url('../../img/animals-cute-little-1359342.jpg') no-repeat
+		center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.login-button {
+	height: 40px;
+	width: 200px;
+	max-width: 90%;
+	padding: 10px;
+	margin-top: 20px;
+	border-radius: 7px;
+	border: 1px solid rgb(68, 164, 6);
+	background-color: rgb(68, 164, 6);
+	color: white;
+	font-size: 1.3rem;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.login-button:hover {
+	background: rgb(34, 41, 72);
+	border: 1px solid white;
+	box-shadow: 0 0 10px white;
+}
+
+.align-form {
+	text-align: left;
+	line-height: 0;
+	color: white;
 }
 
 footer {
-  margin-top: 140px;
+	/* margin-top: 140px; */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
