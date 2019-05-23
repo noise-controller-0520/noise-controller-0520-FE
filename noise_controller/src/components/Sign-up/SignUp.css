@@ -12,6 +12,13 @@
   font-family: 'Josefin Sans', sans-serif; 
 }
 
+@media only screen and (max-width: 500px) {
+  .form-container {
+      width: 100%;
+      box-shadow: none;
+  }
+}
+
 .background {
   height: 90vh;
   width: 100%;

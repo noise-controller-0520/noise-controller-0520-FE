@@ -21,3 +21,10 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
+@media only screen and (max-width: 1000px) {
+    .scores {
+        width: 100%;
+        box-shadow: none;
+    }
+  }
