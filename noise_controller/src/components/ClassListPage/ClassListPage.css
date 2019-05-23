@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
-* {
-	font-family: 'Josefin Sans', sans-serif;
-}
-
 .class-input {
 	display: flex;
 	flex-direction: row;
@@ -22,7 +18,7 @@
 		box-shadow: none;
 		flex-direction: column;
 		align-items: center;
-		/* margin-top: 20%; */
+		margin-top: 30%;
 	}
 
 	h3 {
@@ -56,11 +52,9 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	/* border: 1px solid red; */
 }
 
 .classrooms {
-	/* border: 1px solid red; */
 	background-color: rgba(34, 41, 72, 0.75);
 	padding: 3%;
 }
@@ -88,14 +82,12 @@
 	color: black;
 	width: 40%;
 	margin-right: 2%;
-	/* border: 1px solid red; */
 }
 
 h3 {
 	color: white;
 	padding: 0;
 	margin: 0;
-	/* border: 1px solid red; */
 	width: 40%;
 }
 
