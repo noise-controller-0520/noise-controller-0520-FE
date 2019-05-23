@@ -12,7 +12,7 @@ function Classrooms(props) {
   };
 
   const startGame = id => {
-      props.history.push(`/main-page/${id}`)
+      props.history.push(`/game-page/${id}`)
   }
 
   const checkScores = id => {

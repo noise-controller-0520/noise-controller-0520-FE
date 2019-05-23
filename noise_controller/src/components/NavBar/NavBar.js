@@ -20,7 +20,7 @@ function NavBar(props) {
         
         <Link to="/classrooms"> Classrooms </Link>
      
-        <Link to="/main-page/:id"> Play </Link>
+        <Link to="/game-page/:id"> Play </Link>
 
         <Link to="/scoreboard"> Scoreboard </Link>
 
