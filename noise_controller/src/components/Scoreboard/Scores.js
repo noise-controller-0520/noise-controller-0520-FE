@@ -15,6 +15,7 @@ function Scores(props) {
       <div>{theDate()}</div>
 
       Score: {props.score.score}
+      
 
 
     </h3>

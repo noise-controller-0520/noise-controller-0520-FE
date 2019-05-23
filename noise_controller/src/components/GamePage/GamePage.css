@@ -14,12 +14,10 @@
     align-items: center;
   }
 
-  .top-section {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  }
-
   .timer {
     margin-top: 70px;
+  }
+
+  .audio-style {
+    margin-top: 100px;
   }
