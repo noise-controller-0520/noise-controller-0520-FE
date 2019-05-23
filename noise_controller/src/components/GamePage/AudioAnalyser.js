@@ -27,9 +27,8 @@ class AudioAnalyser extends React.Component {
 			threshDescription : 'A whisper will trigger me',
 		//	first             : false,
 		//	second            : false,
-			count             : 0,
-			timeOut           : 10,
-			animals: []
+			// count             : 0,
+			// timeOut           : 10,
 		};
 
 		this.tick = this.tick.bind(this);
@@ -53,47 +52,30 @@ class AudioAnalyser extends React.Component {
 		clearInterval(this.timer);
 	}
 
-	// timer = () => {
-	// 	let time = new Date().getMilliseconds();
-
-	// 	if (time > 980) {
-	// 		console.log('plus 1');
-	// 		this.setState({ count: this.state.count + 1 });
-	// 	}
-	// 	if (this.state.count === this.state.timeOut) {
-	// 		console.log('animate 1st');
-	// 		this.setState({
-	// 			first : true
-	// 		});
-	// 	}
-	// 	if (this.state.count === this.state.timeOut * 2) {
-	// 		console.log('animate 2nd');
-	// 		this.setState({
-	// 			second : true,
-	// 			count  : 0
-	// 		});
-	// 	}
-	// 	console.log(this.state.count, time);
-	// 	console.log('*******', this.state.timeOut);
-	// };
-
 	tick = () => {
 		this.analyser.getByteTimeDomainData(this.dataArray);
 		this.rafId = requestAnimationFrame(this.tick);
 
 		this.setState({
-		  count: this.state.count + 1,
-		  audioData: this.dataArray
-
-
+			audioData: this.dataArray
 		})
+
+		if (Math.max.apply(Math, this.state.audioData) > this.state.maxVol) {
+      this.setState({
+        violations: this.state.violations + 1,
+        counter: 0
+			})
+			this.props.resetAnimals()
+    }
+
 		if (this.state.count >= this.state.delay) {
-		  this.setState({
-			count: 0,
-			animals: [...this.state.animals, 1],
-		  })
+			this.setState({
+				violations: this.state.violations + 1,
+				count: 0,
+				animals: [...this.state.animals, 1],
+			})
 		}
-	  }
+	}
 
 
 	timerChanges = (e) => {
@@ -131,7 +113,7 @@ class AudioAnalyser extends React.Component {
 
 		return (
 			<div>
-				<AudioAnimation first={this.state.first} second={this.state.second} />
+				{/* <AudioAnimation first={this.state.first} second={this.state.second} /> */}
 
 				<div>This counter will go up if you are too loud!!! {this.state.violations}</div>
 				<div>Threshold: {this.state.threshDescription} </div>
