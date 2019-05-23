@@ -3,35 +3,24 @@ import "./GamePage.css";
 import { connect } from 'react-redux';
 import { endGame } from '../../actions';
 import MiniMenu from './MiniMenu';
+import { withRouter } from 'react-router-dom'
 
 import Audio from './Audio';
 
 import './GamePage.css';
 
 class GamePage extends React.Component {
-  state = {
-    timer: 0
-  }
-
-  endGame = id => {
-    localStorage.setItem("class", id);
-
-    this.props.endGame();
-
-    this.props.history.push(`/scoreboard/${id}`);
-  };
+  // state = {
+  //   timer: 0
+  // }
 
   render() {
     return (
       <div className="top-section">
         <div className="audio-style">
-       <Audio />
+          <Audio />
        </div>
-
         <MiniMenu />
-          
-        <button onSubmit={this.endGame}> End Session </button>
-        
       </div>
     );
   }
@@ -44,7 +33,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   { endGame }
-)(GamePage);
+)(GamePage));

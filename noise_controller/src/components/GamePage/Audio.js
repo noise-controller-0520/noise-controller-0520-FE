@@ -1,6 +1,9 @@
 import React from 'react';
 //import './App.css';
 import logo from './logo.svg'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { endGame } from '../../actions';
 
 // components
 import AudioAnalyser from './AudioAnalyser';
@@ -11,12 +14,24 @@ class Audio extends React.Component {
 		this.state = {
 			audio : null,
 			animals: [],
-			delay: 1,
+			delay: 5,
 			count: 0,
 			score: 0,
 			highScore: 0
 		};
 	}
+
+	endGame = () => {
+    const class_id = localStorage.getItem('class')
+
+    const newSession = {
+      class_id: class_id,
+      score: this.state.highScore
+    }
+    this.props.endGame(newSession);
+
+    this.props.history.push(`/scoreboard/${class_id}`);
+  };
 
 	componentWillUnmount() {
     clearInterval(this.timer)
@@ -98,6 +113,7 @@ class Audio extends React.Component {
 		return (
 			<div className="App">
 				<button onClick={this.toggleMicrophone}>{this.state.audio ? 'Stop Mic' : 'Start Mic'}</button>
+				<button onClick={this.endGame}> End Session </button>
 				{this.state.audio && 
 					<>
 						<div className="score">
@@ -142,4 +158,13 @@ class Audio extends React.Component {
 	}
 }
 
-export default Audio;
+const mapStateToProps = state => {
+  return {
+    timer: state.ScoresReducer.timer
+  };
+};
+
+export default withRouter(connect(
+	mapStateToProps,
+	{ endGame }
+)(Audio));

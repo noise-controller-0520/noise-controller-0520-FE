@@ -114,10 +114,10 @@ export const SEND_SCORE_START = "SEND_SCORE_START";
 export const SEND_SCORE_SUCCESS = "SEND_SCORE_SUCCESS";
 export const SEND_SCORE_FAILURE = "SEND_SCORE_FAILURE";
 
-export const endGame = id => dispatch => {
+export const endGame = session => dispatch => {
     dispatch({ type: SEND_SCORE_START });
     axiosWithAuth()
-      .post('https://noise-controller-api.herokuapp.com/sessions', id)
+      .post('https://noise-controller-api.herokuapp.com/sessions', session)
       .then(res => {
           console.log("res", res)
         dispatch({ type: SEND_SCORE_SUCCESS, payload: res.data });
