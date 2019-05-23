@@ -30,7 +30,7 @@ function Classrooms(props) {
           Delete
         </button>
 
-        <button onClick={() => checkScores(props.classroom.id) }> 
+        <button className='classy-button' onClick={() => checkScores(props.classroom.id) }> 
             Check Scores
         </button>
 
