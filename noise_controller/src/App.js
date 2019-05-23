@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/Sign-up/SignUp';
 import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
-import GamePage from './components/Main-page/GamePage';
+import GamePage from './components/GamePage/GamePage';
 import ScoresPage from './components/Scoreboard/ScoresPage';
 import ClassesPage from './components/ClassListPage/ClassListPage';
 

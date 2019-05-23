@@ -110,9 +110,9 @@ export const getScores = id => dispatch => {
 };
 
 
-export const SEND_SCORES_START = "SEND_SCORES_START";
-export const SEND_SCORES_SUCCESS = "SEND_SCORES_SUCCESS";
-export const SEND_SCORES_FAILURE = "SEND_SCORES_FAILURE";
+export const SEND_SCORE_START = "SEND_SCORE_START";
+export const SEND_SCORE_SUCCESS = "SEND_SCORE_SUCCESS";
+export const SEND_SCORE_FAILURE = "SEND_SCORE_FAILURE";
 
 export const endGame = id => dispatch => {
     dispatch({ type: SEND_SCORE_START });
