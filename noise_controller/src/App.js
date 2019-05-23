@@ -9,7 +9,7 @@ import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';
 import MainPage from './components/Main-page/MainPage';
 import ScoresPage from './components/Scoreboard/ScoresPage';
-import ClassesPage from './components/Class-page/ClassListPage';
+import ClassesPage from './components/ClassListPage/ClassListPage';
 
 function App() {
 

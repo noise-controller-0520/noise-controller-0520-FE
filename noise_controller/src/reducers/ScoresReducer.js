@@ -11,17 +11,18 @@ error: ''
 }
 
 export const ScoresReducer = ( state = initialState, action ) => {
+
     switch (action.type) {
         case FETCH_SCORES_START: 
         return {
-            ...start,
+            ...state,
             fetchingScores: true,
             error: ''
         }
 
         case FETCH_SCORES_SUCCESS: 
         return {
-            ...start,
+            ...state,
             scores: action.payload,
             fetchingScores: false,
             error: ''
@@ -29,7 +30,7 @@ export const ScoresReducer = ( state = initialState, action ) => {
 
         case FETCH_SCORES_FAILURE: 
         return {
-            ...start,
+            ...state,
             fetchingScores: false,
             error: ''
         }

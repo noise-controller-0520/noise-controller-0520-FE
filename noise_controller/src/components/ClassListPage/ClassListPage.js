@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { addClassroom, deleteClassroom, getClassroom } from "../../actions";
 import Classrooms from "./Classrooms";
-import "./ClassesPage.css";
+import "./ClassListPage.css";
 
 class ClassesPage extends React.Component {
   state = {
