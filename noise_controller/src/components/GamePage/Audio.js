@@ -8,7 +8,7 @@ class Audio extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			audio : null,
+			audio: null,
 			animals: [],
 			delay: 5,
 			count: 0,
@@ -70,6 +70,7 @@ class Audio extends React.Component {
 	};
 
 	render() {
+		console.log(this.state.animals)
 		return (
 			<div className="App">
 				<button onClick={this.toggleMicrophone}>{this.state.audio ? 'Stop Mic' : 'Start Mic'}</button>

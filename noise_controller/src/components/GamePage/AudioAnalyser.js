@@ -67,15 +67,7 @@ class AudioAnalyser extends React.Component {
 			})
 			this.props.resetAnimals()
     }
-
-		if (this.state.count >= this.state.delay) {
-			this.setState({
-				violations: this.state.violations + 1,
-				count: 0,
-				animals: [...this.state.animals, 1],
-			})
-		}
-	}
+	
 
 
 	timerChanges = (e) => {
