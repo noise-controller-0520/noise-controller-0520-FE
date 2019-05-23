@@ -16,14 +16,17 @@ toggle = () => {
 
 render() {
     return (
-        <div>
+        <div className='mini-menu'>
+
+        <button className='menu-button' onClick={this.toggle}> <img src={menu} /></button>
+
             {this.state.on && (
                 <div>
                <h1> Adjust Sensitivity Here </h1>,
                <h1> Adjust Animal Interval Here </h1>
                </div>
             )}
-            <button onClick={this.toggle}> <img class="menu-button" src={menu} /></button>
+            
         </div>
     )
 }

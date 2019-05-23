@@ -1,12 +1,17 @@
 import React from "react";
 import "./GamePage.css";
+import { connect } from 'react-redux';
+import { endGame } from '../../actions';
 
 import MiniMenu from './MiniMenu';
 
 
 class GamePage extends React.Component {
+
   endGame = id => {
     localStorage.setItem("class", id);
+
+    this.props.endGame();
     this.props.history.push(`/scoreboard/${id}`);
   };
 
@@ -26,11 +31,14 @@ class GamePage extends React.Component {
             <div> Class... </div>
           </div>
 
-          <button onSubmit={this.endGame}> See Scores </button>
+          <button onSubmit={this.endGame}> End Session </button>
         </div>
       </div>
     );
   }
 }
 
-export default GamePage;
+export default connect(
+  mapStateToProps,
+  { endGame }
+)(GamePage);
