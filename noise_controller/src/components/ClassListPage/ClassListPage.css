@@ -1,38 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
 .class-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-    padding: 10px;
-    margin-top: 80px;
-    background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 50%;
+	padding: 3%;
+	background-color: rgba(34, 41, 72, 1);
+	color: white;
+	margin: 15% auto 0;
+}
+
+@media only screen and (max-width: 500px) {
+	.class-input {
+		width: 100%;
+		box-shadow: none;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 30%;
+	}
+
+	h3 {
+		text-align: center;
+	}
+
+	.login-input {
+		margin: 3% 0;
+	}
 }
 
 .class-button {
-    width: 100px;
-    padding: 5px;
-    border-radius: 5px;
+	width: 30%;
+	padding: 1%;
+	border-radius: 7px;
+	background-color: rgb(68, 164, 6);
+	color: white;
+	border: none;
+	border: 1px solid rgb(68, 164, 6);
+}
+
+.class-button:hover {
+	background: rgb(34, 41, 72);
+	border: 1px solid white;
+	box-shadow: 0 0 10px white;
 }
 
 .classrooms-list {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.classrooms {
+	background-color: rgba(34, 41, 72, 0.75);
+	padding: 3%;
+}
+
+.classroom-button,
+.classy-button {
+	width: 60%;
+	padding: 2%;
+	border-radius: 7px;
+	background-color: rgb(68, 164, 6);
+	color: white;
+	border: none;
+	border: 1px solid rgb(68, 164, 6);
+}
+
+.classroom-button:hover,
+.classy-button:hover {
+	background: rgb(34, 41, 72);
+	border: 1px solid white;
+	box-shadow: 0 0 10px white;
 }
 
 .login-input {
-    background: lightgrey;
+	background: white;
+	color: black;
+	width: 40%;
+	margin-right: 2%;
 }
 
 h3 {
-    color: white;
-    padding: 0;
-    margin: 0;
+	color: white;
+	padding: 0;
+	margin: 0;
+	width: 40%;
 }
 
 footer {
-    margin-top: 400px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
