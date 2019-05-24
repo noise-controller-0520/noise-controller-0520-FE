@@ -4,11 +4,11 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 function NavBar(props) {
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("teacher");
-    props.history.push("/login");
-  };
+  // const logout = () => {
+  //   localStorage.removeItem("token");
+  //   localStorage.removeItem("teacher");
+  //   props.history.push("/login");
+  // };
 
   return (
     <nav>
@@ -24,7 +24,7 @@ function NavBar(props) {
 
       <Link to="/scoreboard"> Scoreboard </Link>
 
-      <Link onClick={logout}> Log Out </Link>
+      <Link to="/login"> Log Out </Link>
     </nav>
   );
 }
