@@ -14,6 +14,7 @@
 	align-items: center;
 }
 
+<<<<<<< HEAD:noise_controller/src/components/Main-page/MainPage.css
 .top-section {
 	display: flex;
 	flex-direction: row;
@@ -23,3 +24,12 @@
 .timer {
 	margin-top: 70px;
 }
+=======
+  .timer {
+    margin-top: 70px;
+  }
+
+  .audio-style {
+    margin-top: 100px;
+  }
+>>>>>>> master:noise_controller/src/components/GamePage/GamePage.css

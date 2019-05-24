@@ -102,10 +102,29 @@ export const getScores = id => dispatch => {
   axiosWithAuth()
     .get(`https://noise-controller-api.herokuapp.com/sessions/${id}`)
     .then(res => {
-        console.log("res", res)
       dispatch({ type: FETCH_SCORES_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: FETCH_SCORES_FAILURE, payload: err.response });
     });
 };
+
+
+export const SEND_SCORE_START = "SEND_SCORE_START";
+export const SEND_SCORE_SUCCESS = "SEND_SCORE_SUCCESS";
+export const SEND_SCORE_FAILURE = "SEND_SCORE_FAILURE";
+
+export const endGame = session => dispatch => {
+    dispatch({ type: SEND_SCORE_START });
+    axiosWithAuth()
+      .post('https://noise-controller-api.herokuapp.com/sessions', session)
+      .then(res => {
+          console.log("res", res)
+        dispatch({ type: SEND_SCORE_SUCCESS, payload: res.data });
+      })
+      .catch(err => {
+        dispatch({ type: SEND_SCORE_FAILURE, payload: err.response });
+      });
+  };
+
+

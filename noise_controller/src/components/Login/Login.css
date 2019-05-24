@@ -40,6 +40,7 @@ input {
 	height: 45vh;
 }
 
+/*
 html {
 	background: url('../../img/animals-cute-little-1359342.jpg') no-repeat
 		center center fixed;
@@ -48,6 +49,7 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 }
+*/
 
 .login-button {
 	height: 40px;
