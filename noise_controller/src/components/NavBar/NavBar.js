@@ -16,7 +16,7 @@ function NavBar(props) {
 
       <Link to="/login"> Login </Link>
 
-      <a href="/https://thenoisecontroller.netlify.com/"> Learn more! </a>
+      <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
 
       <Link to="/classrooms"> Classrooms </Link>
 

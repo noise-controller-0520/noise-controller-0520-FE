@@ -4,13 +4,14 @@ import { connect } from "react-redux";
 import { getScores, getHighScore } from "../../actions";
 import Scores from "./Scores";
 
-let className;
+
 class ScoresPage extends React.Component {
+  state = {
+    className: localStorage.getItem("name")
+  }
 
   componentDidMount() {
     const classId = localStorage.getItem("class");
-    className = localStorage.getItem("name");
-    console.log(className);
     this.props.getScores(classId);
   }
 
@@ -28,7 +29,13 @@ class ScoresPage extends React.Component {
       <div className='center'>
 
         <div className='scores'>
-        <h1 className="classroom">{className}</h1>
+        <h1 className="classroom">{this.state.className}</h1>
+          <h1> High Score </h1>
+          <div className="daily-scores">
+            <div>{this.theDate()}</div>
+            Score: {Math.max(...this.getHighScore())}
+          </div>
+          
           <h1> Daily Scores </h1>
 
           {this.props.scores &&
@@ -36,11 +43,6 @@ class ScoresPage extends React.Component {
               <Scores score={score} key={score.id} />
             ))}
 
-          <h1> High Score </h1>
-          <div className="daily-scores">
-            <div>{this.theDate()}</div>
-            Score: {Math.max(...this.getHighScore())}
-          </div>
         </div>
       </div>
     );

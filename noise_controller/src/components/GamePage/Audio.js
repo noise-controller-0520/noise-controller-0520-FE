@@ -33,7 +33,7 @@ class Audio extends React.Component {
     };
   }
 
-  selectRandom = Math.floor(Math.random() * 9);
+  // selectRandom = Math.floor(Math.random() * 9);
 
   animalsArray = [
     skunk,
@@ -71,7 +71,9 @@ class Audio extends React.Component {
       this.setState(
         {
           count: 0,
-          animals: [...this.state.animals, 1]
+          animals: [...this.state.animals, {
+            image: this.animalsArray[Math.floor(Math.random() * 9)]
+          }]
         },
         () => {
           this.setState(
@@ -185,7 +187,7 @@ class Audio extends React.Component {
         {this.state.animals &&
           this.state.animals.map(animal => (
             <img
-              src={this.animalsArray[this.selectRandom]}
+              src={animal.image}
               height="100px"
               width="100px"
               alt="animals"

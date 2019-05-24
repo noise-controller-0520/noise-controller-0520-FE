@@ -25,16 +25,17 @@ function Classrooms(props) {
   return (
     <div className='classrooms'>
       
-      
-        <button className='classroom-button' onClick={() => startGame(props.classroom.id)} >{props.classroom.class_name}</button>
+        <h2>{props.classroom.class_name}</h2>
+        <button className='classroom-button' onClick={() => startGame(props.classroom.id)} >Play</button>
+
+        <button className='classy-button' onClick={() => checkScores(props.classroom.id, props.classroom.class_name) }> 
+            Check Scores
+        </button>
 
         <button className='classy-button' onClick={deleteClassroom} key={props.classroom.id}>
           Delete
         </button>
 
-        <button className='classy-button' onClick={() => checkScores(props.classroom.id, props.classroom.class_name) }> 
-            Check Scores
-        </button>
 
         
       

@@ -81,6 +81,7 @@ class SignUp extends React.Component {
           <input
             className="sign-input"  
             name="password"
+            type='password'
             required
             onChange={this.handleChanges}
             value={this.state.teacher.password}

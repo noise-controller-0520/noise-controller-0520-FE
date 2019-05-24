@@ -119,12 +119,12 @@ class AudioAnalyser extends React.Component {
         />
         <div className="levels" />
 
-        <input
+        {/* <input
           type="number"
           onChange={this.timerChanges}
           name="timeOut"
           value={this.state.timeOut}
-        />
+        /> */}
       </div>
     );
   }
