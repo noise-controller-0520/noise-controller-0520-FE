@@ -147,6 +147,8 @@ class Audio extends React.Component {
     console.log(this.selectRandom);
     return (
       <div className="App">
+	
+	<div className='center-layout'>
         <button className="controls" onClick={this.toggleMicrophone}>
           {this.state.audio ? "Stop Mic" : "Start Mic"}
         </button>
@@ -154,8 +156,10 @@ class Audio extends React.Component {
           {" "}
           End Session{" "}
         </button>
+	</div>
+
         {this.state.audio && (
-          <>
+          <div className='center-layout2'>
             <div className="score">Current Score: {this.state.score}</div>
             <div className="high-score">
               Session High Score: {this.state.highScore}
@@ -172,6 +176,7 @@ class Audio extends React.Component {
               />
               Seconds
             </div>
+			
 
             <div>
               <AudioAnalyser
@@ -182,7 +187,7 @@ class Audio extends React.Component {
                 resetAnimals={this.resetAnimals}
               />
             </div>
-          </>
+          </div>
         )}
         {this.state.animals &&
           this.state.animals.map(animal => (
