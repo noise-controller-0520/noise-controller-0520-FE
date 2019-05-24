@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <NavBar />
 
-      <Route path="/register" component={SignUp} />
+      <Route exact path="/" component={SignUp} />
 
       <Route path="/login" component={Login} />
 

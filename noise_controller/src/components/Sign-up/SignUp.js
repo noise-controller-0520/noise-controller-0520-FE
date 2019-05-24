@@ -43,6 +43,7 @@ class SignUp extends React.Component {
           <div className='align-form'>
           <p>First Name</p>
           <input
+            className="sign-input"
             name="first_name"
             required
             onChange={this.handleChanges}
@@ -51,6 +52,7 @@ class SignUp extends React.Component {
 
           <p>Last Name</p>
           <input
+             className="sign-input"
             name="last_name"
             required
             onChange={this.handleChanges}
@@ -59,6 +61,7 @@ class SignUp extends React.Component {
 
           <p>Email</p>
           <input
+            className="sign-input"
             name="email"
             required
             onChange={this.handleChanges}
@@ -67,6 +70,7 @@ class SignUp extends React.Component {
 
           <p>Username</p>
           <input
+            className="sign-input"
             name="username"
             required
             onChange={this.handleChanges}
@@ -75,6 +79,7 @@ class SignUp extends React.Component {
 
           <p>Password</p>
           <input
+            className="sign-input"  
             name="password"
             required
             onChange={this.handleChanges}

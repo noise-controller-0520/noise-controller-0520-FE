@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 function Classrooms(props) {
   console.log(props);
+  // console.log(props.classroom.class_name);
 
   const deleteClassroom = event => {
     event.preventDefault();
@@ -15,8 +16,9 @@ function Classrooms(props) {
       props.history.push(`/game-page/${id}`)
   }
 
-  const checkScores = id => {
+  const checkScores = (id, name) => {
     localStorage.setItem('class', id)
+    localStorage.setItem('name', name)
     props.history.push(`/scoreboard/${id}`)
 }
 
@@ -30,7 +32,7 @@ function Classrooms(props) {
           Delete
         </button>
 
-        <button className='classy-button' onClick={() => checkScores(props.classroom.id) }> 
+        <button className='classy-button' onClick={() => checkScores(props.classroom.id, props.classroom.class_name) }> 
             Check Scores
         </button>
 

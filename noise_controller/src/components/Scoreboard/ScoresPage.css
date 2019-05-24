@@ -1,8 +1,12 @@
-
-
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.classroom {
+    font-size: 3rem;
+    color: rgb(68, 164, 6);
+    margin: 0;
 }
 
 .scores {
@@ -13,18 +17,26 @@
     margin-top: 100px;
     background: rgb(34, 41, 72);
     box-shadow: 0 0 10px black;
-    border-radius: 8px;
     font-family: 'Press Start 2P', sans-serif;
     color: white;
+    overflow-y: auto;
   
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
+::-webkit-scrollbar {width: 12px;}
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 1px solid white;
+}
+::-webkit-scrollbar-thumb {background: #CCCCCC;}
+::-webkit-scrollbar-thumb:hover {background: #BBBBBB;}
+
 @media only screen and (max-width: 1000px) {
-    .scores {
-        width: 100%;
-        box-shadow: none;
-    }
+  .scores {
+    width: 100%;
+    box-shadow: none;
   }
+}

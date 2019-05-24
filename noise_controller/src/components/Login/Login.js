@@ -12,10 +12,9 @@ class Login extends React.Component {
   };
 
   componentDidMount() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('teacher');
+    localStorage.removeItem("token");
+    localStorage.removeItem("teacher");
   }
-
 
   handleChanges = e => {
     this.setState({
@@ -29,10 +28,9 @@ class Login extends React.Component {
     e.preventDefault();
 
     this.props.login(this.state.credentials).then(() => {
-      if (localStorage.getItem('token')) {
+      if (localStorage.getItem("token")) {
         this.props.history.push("/classrooms");
-      }
-      else {
+      } else {
         // Flash a message saying Invalid Credentials or something like that
       }
     });
@@ -43,23 +41,23 @@ class Login extends React.Component {
       <div className="background2">
         <div className="login-container">
           <h1> Login </h1>
-          <form onSubmit={this.login}>
-            <div className="align-form">
-              <p> Username </p>
-              <input
-                placeholder="Enter username"
-                name="username"
-                onChange={this.handleChanges}
-                value={this.state.credentials.username}
-              />
-              <p> Password </p>
-              <input
-                placeholder="Enter password"
-                name="password"
-                onChange={this.handleChanges}
-                value={this.state.credentials.password}
-              />
-            </div>
+          <form onSubmit={this.login} className="align-form">
+            <p> Username </p>
+            <input
+              className="sign-input"
+              placeholder="Enter username"
+              name="username"
+              onChange={this.handleChanges}
+              value={this.state.credentials.username}
+            />
+            <p> Password </p>
+            <input
+              className="sign-input"
+              placeholder="Enter password"
+              name="password"
+              onChange={this.handleChanges}
+              value={this.state.credentials.password}
+            />
           </form>
 
           <button className="login-button" onClick={this.login}>

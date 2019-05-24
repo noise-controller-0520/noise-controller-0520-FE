@@ -1,0 +1,21 @@
+.controls {
+    margin: 10px;
+}
+
+.interval-width {
+    width: 40px;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    outline: none;
+    color: red;
+    text-align: center;
+}
+
+.score {
+    margin: 10px;
+}
+
+.high-score {
+    margin: 10px;
+}
