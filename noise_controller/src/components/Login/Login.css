@@ -36,7 +36,8 @@ input {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	
+	align-items: center;
+	height: 70vh;
 }
 
 /*
@@ -52,6 +53,7 @@ html {
 
 
 .login-button {
+	cursor: pointer;
 	height: 40px;
 	width: 200px;
 	max-width: 90%;
