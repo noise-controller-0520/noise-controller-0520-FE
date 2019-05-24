@@ -29,9 +29,9 @@
     /* margin: 10px; */
 }
 ::-webkit-scrollbar-thumb {
-    background: #CCCCCC;
+    background: #DDDDDD;
 }
-::-webkit-scrollbar-thumb:hover {background: #AAAAAA;}
+::-webkit-scrollbar-thumb:hover {background: #BBBBBB;}
 
 @media only screen and (max-width: 1000px) {
     .scores {

@@ -37,7 +37,8 @@ input {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	height: 45vh;
+	align-items: center;
+	height: 70vh;
 }
 
 /*
