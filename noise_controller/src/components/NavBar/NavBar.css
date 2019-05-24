@@ -1,5 +1,6 @@
+
 nav {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(68, 164, 6, 0.8);
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -10,10 +11,12 @@ nav {
     z-index: 2;
     top: 0;
     width: 100%;
-    height: 58px;
+    min-height: 58px;
 }
 
 a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.3rem;
     margin-right: 40px;
     text-decoration: none;
     color: #FFFF;
@@ -22,5 +25,38 @@ a {
 
 a:hover {
     transform: scale(1.1);
-    filter: brightness(20%);
+    color: #222948;
   }
+
+  @media only screen and (max-width: 1000px) {
+      nav {
+          justify-content: space-around;
+          flex-wrap: wrap;
+      }
+      a {
+          order: 1;
+          width: 30%;
+          text-align: center;
+          margin: 10px 0;
+      }
+      a:nth-child(3), a:nth-child(4), a:nth-child(5) {
+          order: 2;
+      }
+  }
+
+  @media only screen and (max-width: 500px) {
+    nav {
+        justify-content: space-between;
+        flex-flow: column wrap;
+        max-height: 150px;
+    }
+    a {
+        order: 1;
+        width: 30%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    a:nth-child(3), a:nth-child(4), a:nth-child(5) {
+        order: 2;
+    }
+}
