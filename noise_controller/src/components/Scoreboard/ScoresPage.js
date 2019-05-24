@@ -11,8 +11,6 @@ class ScoresPage extends React.Component {
     const classId = localStorage.getItem("class");
     this.props.getScores(classId);
 
-
-  //  this.props.getHighScore(classId);
   } 
 
 getHighScore = () => {
@@ -33,13 +31,13 @@ theDate = () => {
        
           {this.props.scores &&
             this.props.scores.map(score => (
-              <Scores score={score} />
+              <Scores score={score} key={score.id} />
             ))}
 
             <h1> High Score </h1>
             <div className='daily-scores'>
             <div>{this.theDate()}</div>
-              {Math.max(...this.getHighScore()) }
+             Score: {Math.max(...this.getHighScore()) }
               </div>
         </div>
       </div>

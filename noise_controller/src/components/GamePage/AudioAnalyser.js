@@ -1,7 +1,4 @@
 import React from 'react';
-
-import AudioAnimation from './AudioAnimation';
-
 import Slider from '@material-ui/lab/Slider';
 import { withStyles } from '@material-ui/core/styles';
 

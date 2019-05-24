@@ -16,6 +16,7 @@ error: ''
 }
 
 export const ScoresReducer = ( state = initialState, action ) => {
+    
 
     switch (action.type) {
         case FETCH_SCORES_START: 
