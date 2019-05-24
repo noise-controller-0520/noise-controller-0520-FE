@@ -5,6 +5,12 @@
     justify-content: center;
 }
 
+.classroom {
+    font-size: 3rem;
+    color: rgb(68, 164, 6);
+    margin: 0;
+}
+
 .scores {
     width: 600px;
     height: 300px;
@@ -26,11 +32,8 @@
 ::-webkit-scrollbar-track {
     background: transparent;
     border: 1px solid white;
-    /* margin: 10px; */
 }
-::-webkit-scrollbar-thumb {
-    background: #DDDDDD;
-}
+::-webkit-scrollbar-thumb {background: #CCCCCC;}
 ::-webkit-scrollbar-thumb:hover {background: #BBBBBB;}
 
 @media only screen and (max-width: 1000px) {
