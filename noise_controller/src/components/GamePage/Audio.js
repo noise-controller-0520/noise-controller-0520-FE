@@ -1,5 +1,5 @@
 import React from "react";
-//import './App.css';
+import "./Audio.css";
 
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
@@ -20,13 +20,12 @@ import turtle from "./1x/img7.png";
 import chicken from "./1x/img8.png";
 import duck from "./1x/img9.png";
 
-
 class Audio extends React.Component {
   constructor() {
     super();
     this.state = {
       audio: null,
-	  animals: [],
+      animals: [],
       delay: 5,
       count: 0,
       score: 0,
@@ -34,20 +33,19 @@ class Audio extends React.Component {
     };
   }
 
-selectRandom = Math.floor( Math.random() * 9 );
+  selectRandom = Math.floor(Math.random() * 9);
 
-animalsArray = [
-	skunk,
-	elephant,
-	hippo,
-	lion,
-	giraffe,
-	rhino,
-	jaguar,
-	chicken,
-	duck ]
-
-
+  animalsArray = [
+    skunk,
+    elephant,
+    hippo,
+    lion,
+    giraffe,
+    rhino,
+    jaguar,
+    chicken,
+    duck
+  ];
 
   endGame = () => {
     const class_id = localStorage.getItem("class");
@@ -147,10 +145,13 @@ animalsArray = [
     console.log(this.selectRandom);
     return (
       <div className="App">
-        <button onClick={this.toggleMicrophone}>
+        <button className="controls" onClick={this.toggleMicrophone}>
           {this.state.audio ? "Stop Mic" : "Start Mic"}
         </button>
-        <button onClick={this.endGame}> End Session </button>
+        <button className="controls" onClick={this.endGame}>
+          {" "}
+          End Session{" "}
+        </button>
         {this.state.audio && (
           <>
             <div className="score">Current Score: {this.state.score}</div>
@@ -160,6 +161,7 @@ animalsArray = [
             <div className="delay">
               New Animal Every
               <input
+                className="interval-width"
                 name="delay"
                 type="number"
                 min="1"
@@ -168,6 +170,7 @@ animalsArray = [
               />
               Seconds
             </div>
+
             <div>
               <AudioAnalyser
                 audio={this.state.audio}
@@ -181,7 +184,12 @@ animalsArray = [
         )}
         {this.state.animals &&
           this.state.animals.map(animal => (
-            <img src={ this.animalsArray[this.selectRandom] } height="100px" width="100px" alt="animals" />
+            <img
+              src={this.animalsArray[this.selectRandom]}
+              height="100px"
+              width="100px"
+              alt="animals"
+            />
           ))}
       </div>
     );

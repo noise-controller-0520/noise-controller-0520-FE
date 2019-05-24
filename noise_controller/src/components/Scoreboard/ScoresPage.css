@@ -1,31 +1,28 @@
-
-
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .scores {
-    width: 600px;
-    height: 300px;
-    padding: 40px;
-    padding-bottom: 500px;
-    margin-top: 200px;
-    margin-bottom: 100px;
-    background: rgb(34, 41, 72);
-    box-shadow: 0 0 10px black;
-    border-radius: 8px;
-    font-family: 'Press Start 2P', sans-serif;
-    color: white;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  width: 600px;
+  height: 300px;
+  padding: 40px;
+  padding-bottom: 500px;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  background: rgb(34, 41, 72);
+  box-shadow: 0 0 10px black;
+  border-radius: 8px;
+  font-family: "Press Start 2P", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 @media only screen and (max-width: 1000px) {
-    .scores {
-        width: 100%;
-        box-shadow: none;
-    }
+  .scores {
+    width: 100%;
+    box-shadow: none;
   }
+}
