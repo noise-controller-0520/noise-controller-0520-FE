@@ -1,24 +1,24 @@
-import React from "react";
-import "./Audio.css";
+import React from 'react';
+import './Audio.css';
 
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { endGame } from "../../actions";
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { endGame } from '../../actions';
 
 // components
-import AudioAnalyser from "./AudioAnalyser";
+import AudioAnalyser from './AudioAnalyser';
 
 // animal images
-import skunk from "./1x/img0.png";
-import elephant from "./1x/img1.png";
-import hippo from "./1x/img2.png";
-import lion from "./1x/img3.png";
-import giraffe from "./1x/img4.png";
-import rhino from "./1x/img5.png";
-import jaguar from "./1x/img6.png";
-import turtle from "./1x/img7.png";
-import chicken from "./1x/img8.png";
-import duck from "./1x/img9.png";
+import skunk from './1x/img0.png';
+import elephant from './1x/img1.png';
+import hippo from './1x/img2.png';
+import lion from './1x/img3.png';
+import giraffe from './1x/img4.png';
+import rhino from './1x/img5.png';
+import jaguar from './1x/img6.png';
+import turtle from './1x/img7.png';
+import chicken from './1x/img8.png';
+import duck from './1x/img9.png';
 
 class Audio extends React.Component {
   constructor() {
@@ -207,14 +207,14 @@ class Audio extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return {
-    timer: state.ScoresReducer.timer
-  };
+	return {
+		timer: state.ScoresReducer.timer
+	};
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    { endGame }
-  )(Audio)
+	connect(
+		mapStateToProps,
+		{ endGame }
+	)(Audio)
 );
