@@ -1,6 +1,7 @@
 .controls {
     margin: 10px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 25px;
 }
 
 .interval-width {

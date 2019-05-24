@@ -104,8 +104,6 @@ class AudioAnalyser extends React.Component {
 
     return (
       <div>
-        {/* <AudioAnimation first={this.state.first} second={this.state.second} /> */}
-
         {/* <div>This counter will go up if you are too loud!!! {this.state.violations}</div> */}
         <div>Threshold: {this.state.threshDescription} </div>
 

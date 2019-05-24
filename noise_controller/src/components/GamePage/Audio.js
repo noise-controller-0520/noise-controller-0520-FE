@@ -41,7 +41,8 @@ class Audio extends React.Component {
     hippo,
     lion,
     giraffe,
-    rhino,
+	rhino,
+	turtle,
     jaguar,
     chicken,
     duck
@@ -159,7 +160,10 @@ class Audio extends React.Component {
 	</div>
 
         {this.state.audio && (
+			
           <div className='center-layout2'>
+
+			
             <div className="score">Current Score: {this.state.score}</div>
             <div className="high-score">
               Session High Score: {this.state.highScore}
@@ -176,7 +180,6 @@ class Audio extends React.Component {
               />
               Seconds
             </div>
-			
 
             <div>
               <AudioAnalyser
