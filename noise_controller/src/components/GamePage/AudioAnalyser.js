@@ -67,7 +67,7 @@ class AudioAnalyser extends React.Component {
 			})
 			this.props.resetAnimals()
     }
-	
+}
 
 
 	timerChanges = (e) => {

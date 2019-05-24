@@ -20,7 +20,7 @@ class GamePage extends React.Component {
         <div className="audio-style">
           <Audio />
        </div>
-        <MiniMenu />
+       
       </div>
     );
   }

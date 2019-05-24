@@ -14,7 +14,7 @@ function NavBar(props) {
   return (
     <nav>
      
-        <Link to="/register"> Sign-Up </Link>
+        <Link to="/"> Sign-Up </Link>
       
         <Link to="/login"> Login </Link>
         

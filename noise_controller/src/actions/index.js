@@ -119,7 +119,6 @@ export const endGame = session => dispatch => {
     axiosWithAuth()
       .post('https://noise-controller-api.herokuapp.com/sessions', session)
       .then(res => {
-          console.log("res", res)
         dispatch({ type: SEND_SCORE_SUCCESS, payload: res.data });
       })
       .catch(err => {
@@ -128,3 +127,22 @@ export const endGame = session => dispatch => {
   };
 
 
+export const GET_HIGH_SCORE_START = "GET_HIGH_SCORE_START";
+export const GET_HIGH_SCORE_SUCCESS = "GET_HIGH_SCORE_SUCCESS";
+export const GET_HIGH_SCORE_FAILURE = "GET_HIGH_SCORE_FAILURE";
+
+
+  export const getHighScore = session => dispatch => {
+    dispatch({ type: GET_HIGH_SCORE_START });
+    axiosWithAuth()
+      .get('https://noise-controller-api.herokuapp.com/sessions', session)
+      .then(res => {
+          console.log("res", res)
+        dispatch({ type: GET_HIGH_SCORE_SUCCESS, payload: res.data });
+      })
+      .catch(err => {
+        dispatch({ type: GET_HIGH_SCORE_FAILURE, payload: err.response });
+      });
+  };
+
+  

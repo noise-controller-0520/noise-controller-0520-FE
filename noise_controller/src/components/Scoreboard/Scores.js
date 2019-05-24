@@ -16,7 +16,7 @@ function Scores(props) {
 
       Score: {props.score.score}
       
-
+   
 
     </h3>
   );
