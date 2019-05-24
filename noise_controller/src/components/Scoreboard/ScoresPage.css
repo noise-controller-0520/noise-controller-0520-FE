@@ -1,8 +1,6 @@
-
-
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .classroom {
@@ -37,8 +35,8 @@
 ::-webkit-scrollbar-thumb:hover {background: #BBBBBB;}
 
 @media only screen and (max-width: 1000px) {
-    .scores {
-        width: 100%;
-        box-shadow: none;
-    }
+  .scores {
+    width: 100%;
+    box-shadow: none;
   }
+}
