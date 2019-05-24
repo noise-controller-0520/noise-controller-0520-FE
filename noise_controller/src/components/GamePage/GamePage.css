@@ -1,19 +1,30 @@
 .welcome-section {
-    margin-top: 80px;
+	margin-top: 80px;
 }
 
 .user-container {
-    width: 200px;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid black;
-    margin-left: 20px;
-    align-items: center;
-  }
+	width: 200px;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	margin-top: 10px;
+	border: 1px solid black;
+	margin-left: 20px;
+	align-items: center;
+}
 
+<<<<<<< HEAD:noise_controller/src/components/Main-page/MainPage.css
+.top-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.timer {
+	margin-top: 70px;
+}
+=======
   .timer {
     margin-top: 70px;
   }
@@ -21,3 +32,4 @@
   .audio-style {
     margin-top: 100px;
   }
+>>>>>>> master:noise_controller/src/components/GamePage/GamePage.css
