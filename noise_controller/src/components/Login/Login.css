@@ -40,6 +40,15 @@ input {
 	height: 70vh;
 }
 
+.sign-input {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+
 /*
 html {
 	background: url('../../img/animals-cute-little-1359342.jpg') no-repeat

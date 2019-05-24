@@ -1,9 +1,12 @@
 .controls {
-	margin: 5%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+/* 	margin: 5%; */
 	cursor: pointer;
 	width: 30%;
-	padding: 2%;
-	border-radius: 7px;
+/* 	padding: 2%; */
+/* 	border-radius: 7px; */
 	background-color: rgb(68, 164, 6);
 	color: white;
 	border: none;
@@ -79,3 +82,4 @@
 .MuiSlider-root.AudioAnalyser-slider-21 {
 	margin-top: 5%;
 }
+

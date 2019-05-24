@@ -4,6 +4,7 @@ import "./SignUp.css";
 
 import { connect } from "react-redux";
 import { signUp } from "../../actions";
+import { Link } from "react-router-dom";
 
 class SignUp extends React.Component {
   state = {
@@ -36,6 +37,14 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="background">
+      <nav>
+      <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
+
+      <Link to="/"> Sign-Up </Link>
+
+      <Link to="/login"> Login </Link>
+
+    </nav>
         
         <form onSubmit={this.signUp} className="form-container">
           <h1>Sign-up to Play!</h1>

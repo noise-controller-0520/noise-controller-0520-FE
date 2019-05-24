@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { addClassroom, deleteClassroom, getClassroom } from "../../actions";
 import Classrooms from "./Classrooms";
 import "./ClassListPage.css";
+import { Link } from "react-router-dom";
 
 class ClassesPage extends React.Component {
   state = {
@@ -23,7 +24,6 @@ class ClassesPage extends React.Component {
   }
 
   addClassroom = e => {
-
     const newClass = {
       class_name: this.state.inputField,
       teacher_id: localStorage.getItem("teacher")
@@ -41,16 +41,31 @@ class ClassesPage extends React.Component {
     console.log(this.props.classrooms);
     return (
       <div>
+        <nav>
+          <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
+
+          <Link to="/classrooms"> Classrooms </Link>
+
+          <Link to="/game-page/:id"> Play </Link>
+
+          <Link to="/scoreboard"> Scoreboard </Link>
+
+          <Link to="/login"> Log Out </Link>
+        </nav>
+
         <div className="class-input">
           <h3>Add New Classroom</h3>
           <input
-            className='login-input'
+            className="login-input"
             value={this.state.newClassroom}
             onChange={this.handleChanges}
             placeholder="Add another class..."
           />
 
-          <button className="class-button" onClick={this.addClassroom}> Add </button>
+          <button className="class-button" onClick={this.addClassroom}>
+            {" "}
+            Add{" "}
+          </button>
         </div>
 
         <div className="classrooms-list">
@@ -62,7 +77,6 @@ class ClassesPage extends React.Component {
               />
             ))}
         </div>
-
       </div>
     );
   }
