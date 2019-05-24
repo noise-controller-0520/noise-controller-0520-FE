@@ -9,7 +9,7 @@ const styles = {
     width: 300
   },
   slider: {
-    "margin-top": "100px",
+    "margin-top": "20px",
     width: "80%",
     margin: "0 auto",
     padding: "22px 0px"
@@ -21,7 +21,7 @@ class AudioAnalyser extends React.Component {
     super(props);
     this.state = {
       audioData: new Uint8Array(0),
-      maxVol: 130,
+      maxVol: 200,
       violations: 0,
       threshDescription: "A whisper will trigger me"
       //	first             : false,
@@ -105,7 +105,8 @@ class AudioAnalyser extends React.Component {
     return (
       <div>
         {/* <div>This counter will go up if you are too loud!!! {this.state.violations}</div> */}
-        <div>Threshold: {this.state.threshDescription} </div>
+      <h2>Noise Threshold</h2>
+      <h3 className="sound-description">{this.state.threshDescription}</h3>
 
         <Slider
           className={classes.slider}

@@ -41,8 +41,8 @@ class Audio extends React.Component {
     hippo,
     lion,
     giraffe,
-	rhino,
-	turtle,
+	  rhino,
+	  turtle,
     jaguar,
     chicken,
     duck
@@ -129,9 +129,9 @@ class Audio extends React.Component {
     if (this.state.audio) {
       this.stopMicrophone();
       this.stopTimer();
-      this.setState({
-        animals: []
-      });
+      // this.setState({
+      //   animals: []
+      // });
     } else {
       this.getMicrophone();
       this.startTimer();
@@ -148,22 +148,17 @@ class Audio extends React.Component {
     console.log(this.selectRandom);
     return (
       <div className="App">
-	
-	<div className='center-layout'>
-        <button className="controls" onClick={this.toggleMicrophone}>
-          {this.state.audio ? "Stop Mic" : "Start Mic"}
-        </button>
-        <button className="controls" onClick={this.endGame}>
-          {" "}
-          End Session{" "}
-        </button>
-	</div>
-
-        {this.state.audio && (
-			
-          <div className='center-layout2'>
-
-			
+        <div className="user-controls">
+          <div className='center-layout'>
+                <button className="controls" onClick={this.toggleMicrophone}>
+                  {this.state.audio ? "Stop Mic" : "Start Mic"}
+                </button>
+                <button className="controls" onClick={this.endGame}>
+                  {" "}
+                  End Session{" "}
+                </button>
+          </div>
+          <div className="center-layout2">
             <div className="score">Current Score: {this.state.score}</div>
             <div className="high-score">
               Session High Score: {this.state.highScore}
@@ -180,18 +175,22 @@ class Audio extends React.Component {
               />
               Seconds
             </div>
-
-            <div>
-              <AudioAnalyser
-                audio={this.state.audio}
-                animals={this.state.animals}
-                count={this.state.count}
-                delay={this.state.delay}
-                resetAnimals={this.resetAnimals}
-              />
-            </div>
           </div>
-        )}
+          {this.state.audio && (
+            <div className='center-layout2'>
+              <div>
+                <AudioAnalyser
+                  audio={this.state.audio}
+                  animals={this.state.animals}
+                  count={this.state.count}
+                  delay={this.state.delay}
+                  resetAnimals={this.resetAnimals}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+
         {this.state.animals &&
           this.state.animals.map(animal => (
             <img
