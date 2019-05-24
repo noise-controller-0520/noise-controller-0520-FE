@@ -12,7 +12,9 @@ function Classrooms(props) {
     props.deleteClassroom(props.classroom.id);
   };
 
-  const startGame = id => {
+  const startGame = (id, name) => {
+      localStorage.setItem('class', id)
+      localStorage.setItem('name', name)
       props.history.push(`/game-page/${id}`)
   }
 
@@ -26,7 +28,7 @@ function Classrooms(props) {
     <div className='classrooms'>
       
         <h2>{props.classroom.class_name}</h2>
-        <button className='classroom-button' onClick={() => startGame(props.classroom.id)} >Play</button>
+        <button className='classroom-button' onClick={() => startGame(props.classroom.id, props.classroom.class_name)} >Play</button>
 
         <button className='classy-button' onClick={() => checkScores(props.classroom.id, props.classroom.class_name) }> 
             Check Scores
