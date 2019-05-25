@@ -3,7 +3,6 @@ import './App.css';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import NavBar from './components/NavBar/NavBar';
 import SignUp from './components/Sign-up/SignUp';
 import Login from './components/Login/Login';
 import PrivateRoute from './PrivateRoute';

@@ -3,7 +3,6 @@ import "./GamePage.css";
 import { withRouter } from "react-router-dom";
 import Audio from "./Audio";
 import "./GamePage.css";
-import { Link } from "react-router-dom";
 import NavBar from '../NavBar/NavBar'
 
 class GamePage extends React.Component {

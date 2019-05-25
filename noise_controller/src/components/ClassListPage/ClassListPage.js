@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { addClassroom, deleteClassroom, getClassroom } from "../../actions";
 import Classrooms from "./Classrooms";
 import "./ClassListPage.css";
-import { Link } from "react-router-dom";
 import NavBar from '../NavBar/NavBar'
 
 class ClassesPage extends React.Component {
@@ -62,6 +61,7 @@ class ClassesPage extends React.Component {
           {this.props.classrooms &&
             this.props.classrooms.map(classroom => (
               <Classrooms
+                key={classroom.id}
                 classroom={classroom}
                 deleteClassroom={this.deleteClassroom}
               />

@@ -145,7 +145,6 @@ class Audio extends React.Component {
   };
 
   render() {
-    console.log(this.selectRandom);
     return (
       <div className="App">
         <div className="user-controls">
@@ -194,6 +193,7 @@ class Audio extends React.Component {
         {this.state.animals &&
           this.state.animals.map(animal => (
             <img
+              key={Math.random()}
               src={animal.image}
               height="100px"
               width="100px"

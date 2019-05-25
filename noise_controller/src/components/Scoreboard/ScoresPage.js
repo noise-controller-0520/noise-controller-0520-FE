@@ -3,24 +3,23 @@ import "./ScoresPage.css";
 import { connect } from "react-redux";
 import { getScores, getHighScore } from "../../actions";
 import Scores from "./Scores";
-import { Link } from "react-router-dom";
 import NavBar from '../NavBar/NavBar'
 import moment from 'moment'
 
 class ScoresPage extends React.Component {
   state = {
     className: localStorage.getItem("name"),
-    highScore: null,
-    highScoreDate: null
   };
 
   componentDidMount() {
     const classId = localStorage.getItem("class");
-    this.props.getScores(classId);
+    // TODO: we need this to finish before we run getHighScore()
+    // otherwise we end up grabbing the top score from the previous list of scores
+    this.props.getScores(classId)
     this.getHighScore()
   }
 
-  getHighScore = async () => {
+  getHighScore = () => {
     console.log('props.scores', this.props.scores)
     
     // find max score in props.scores

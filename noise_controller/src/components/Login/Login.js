@@ -2,7 +2,6 @@ import React from "react";
 import "./Login.css";
 import { connect } from "react-redux";
 import { login } from "../../actions";
-import { Link } from "react-router-dom";
 import NavBar from '../NavBar/NavBar';
 
 class Login extends React.Component {

@@ -4,7 +4,6 @@ import "./SignUp.css";
 
 import { connect } from "react-redux";
 import { signUp } from "../../actions";
-import { Link } from "react-router-dom";
 
 import NavBar from '../NavBar/NavBar'
 
