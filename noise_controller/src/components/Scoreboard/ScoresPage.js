@@ -5,27 +5,38 @@ import { getScores, getHighScore } from "../../actions";
 import Scores from "./Scores";
 import { Link } from "react-router-dom";
 import NavBar from '../NavBar/NavBar'
+import moment from 'moment'
 
 class ScoresPage extends React.Component {
   state = {
-    className: localStorage.getItem("name")
+    className: localStorage.getItem("name"),
+    highScore: null,
+    highScoreDate: null
   };
 
   componentDidMount() {
     const classId = localStorage.getItem("class");
     this.props.getScores(classId);
+    this.getHighScore()
   }
 
-  getHighScore = () => {
-    return this.props.scores.map(score => score.score);
-  };
-
-  theDate = () => {
-    return new Date().toDateString();
+  getHighScore = async () => {
+    console.log('props.scores', this.props.scores)
+    
+    // find max score in props.scores
+    let topScore;
+    if (this.props.scores.length > 0) {
+      topScore = this.props.scores.reduce((prev, current) => prev.score > current.score ? prev : current)
+      localStorage.setItem('topScore', topScore.score)
+      localStorage.setItem('topScoreDate', topScore.created_at)
+    }
   };
 
   render() {
-    console.log(this.getHighScore());
+    // console.log(this.getHighScore());
+    const topDate = moment(localStorage.getItem("topScoreDate")).format("MMM Do YY")
+    const topScore = localStorage.getItem("topScore")
+
     return (
       <div className="center">
         <NavBar />
@@ -33,14 +44,15 @@ class ScoresPage extends React.Component {
           <h1 className="classroom">{this.state.className}</h1>
           <h1> High Score </h1>
           <div className="daily-scores">
-            <div>{this.theDate()}</div>
-            Score: {Math.max(...this.getHighScore())}
+            <div>{topDate}</div>
+              {topScore}
           </div>
 
           <h1> Daily Scores </h1>
 
           {this.props.scores &&
-            this.props.scores.map(score => (
+          // reverse scores array to show most recent at the top
+            this.props.scores.reverse().map(score => (
               <Scores score={score} key={score.id} />
             ))}
         </div>
@@ -50,9 +62,9 @@ class ScoresPage extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
     scores: state.ScoresReducer.scores,
-
     highScore: state.ScoresReducer.highScore
   };
 };
