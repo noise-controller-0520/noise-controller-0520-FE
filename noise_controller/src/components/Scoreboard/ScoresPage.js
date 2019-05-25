@@ -19,7 +19,7 @@ class ScoresPage extends React.Component {
     // otherwise we end up grabbing the top score from the previous list of scores
     this.props.getScores(classId)
     // hacky fix to wait for props to get updated before we calculate the highScore
-    window.setTimeout(() => this.getHighScore(), 100)
+    window.setTimeout(() => this.getHighScore(), 1000)
   }
 
   getHighScore = () => {
