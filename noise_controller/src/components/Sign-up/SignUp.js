@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import { signUp } from "../../actions";
 import { Link } from "react-router-dom";
 
+import NavBar from '../NavBar/NavBar'
+
 class SignUp extends React.Component {
   state = {
     teacher: {
@@ -37,15 +39,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="background">
-      <nav>
-      <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
-
-      <Link to="/"> Sign-Up </Link>
-
-      <Link to="/login"> Login </Link>
-
-    </nav>
-        
+        <NavBar />       
         <form onSubmit={this.signUp} className="form-container">
           <h1>Sign-up to Play!</h1>
           
@@ -61,7 +55,7 @@ class SignUp extends React.Component {
 
           <p>Last Name</p>
           <input
-             className="sign-input"
+            className="sign-input"
             name="last_name"
             required
             onChange={this.handleChanges}

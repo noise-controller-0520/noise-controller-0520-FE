@@ -5,6 +5,7 @@ import { addClassroom, deleteClassroom, getClassroom } from "../../actions";
 import Classrooms from "./Classrooms";
 import "./ClassListPage.css";
 import { Link } from "react-router-dom";
+import NavBar from '../NavBar/NavBar'
 
 class ClassesPage extends React.Component {
   state = {
@@ -41,18 +42,7 @@ class ClassesPage extends React.Component {
     console.log(this.props.classrooms);
     return (
       <div>
-        <nav>
-          <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
-
-          <Link to="/classrooms"> Classrooms </Link>
-
-          <Link to="/game-page/:id"> Play </Link>
-
-          <Link to="/scoreboard"> Scoreboard </Link>
-
-          <Link to="/login"> Log Out </Link>
-        </nav>
-
+        <NavBar />
         <div className="class-input">
           <h3>Add New Classroom</h3>
           <input

@@ -12,19 +12,17 @@ function NavBar(props) {
 
   return (
     <nav>
-      <Link to="/"> Sign-Up </Link>
-
-      <Link to="/login"> Login </Link>
-
       <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
 
-      <Link to="/classrooms"> Classrooms </Link>
+      {localStorage.getItem("token") &&
+        <Link to="/classrooms"> My Classrooms </Link>
+      }
 
-      <Link to="/game-page/:id"> Play </Link>
+      {!localStorage.getItem("token") &&
+        <Link to="/"> Sign-Up </Link>
+      }
 
-      <Link to="/scoreboard"> Scoreboard </Link>
-
-      <Link to="/login"> Log Out </Link>
+      <Link to="/login">{localStorage.getItem("token") ? 'Logout' : 'Login'} </Link>
     </nav>
   );
 }

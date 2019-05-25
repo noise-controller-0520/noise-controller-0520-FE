@@ -3,13 +3,15 @@ import "./Login.css";
 import { connect } from "react-redux";
 import { login } from "../../actions";
 import { Link } from "react-router-dom";
+import NavBar from '../NavBar/NavBar';
 
 class Login extends React.Component {
   state = {
     credentials: {
       username: "",
-      password: ""
-    }
+      password: "",
+    },
+    token: false
   };
 
   componentDidMount() {
@@ -17,6 +19,10 @@ class Login extends React.Component {
     localStorage.removeItem("teacher");
     localStorage.removeItem("class");
     localStorage.removeItem("name");
+    // calling setState here to force an additional render and get the Nav to render correctly
+    this.setState({
+      token: false
+    })
   }
 
   handleChanges = e => {
@@ -40,16 +46,10 @@ class Login extends React.Component {
   };
 
   render() {
+    console.log('render')
     return (
       <div className="background2">
-      <nav>
-      <Link to="/"> Sign-Up </Link>
-
-      <Link to="/login"> Login </Link>
-
-      <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
-
-    </nav>
+        <NavBar />
         <div className="login-container">
           <h1> Login </h1>
           <form onSubmit={this.login} className="align-form">

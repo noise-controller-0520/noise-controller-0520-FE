@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getScores, getHighScore } from "../../actions";
 import Scores from "./Scores";
 import { Link } from "react-router-dom";
+import NavBar from '../NavBar/NavBar'
 
 class ScoresPage extends React.Component {
   state = {
@@ -27,17 +28,7 @@ class ScoresPage extends React.Component {
     console.log(this.getHighScore());
     return (
       <div className="center">
-        <nav>
-          <a href="https://thenoisecontroller.netlify.com/"> Learn more! </a>
-
-          <Link to="/classrooms"> Classrooms </Link>
-
-          <Link to="/game-page/:id"> Play </Link>
-
-          <Link to="/scoreboard"> Scoreboard </Link>
-
-          <Link to="/login"> Log Out </Link>
-        </nav>
+        <NavBar />
         <div className="scores">
           <h1 className="classroom">{this.state.className}</h1>
           <h1> High Score </h1>
