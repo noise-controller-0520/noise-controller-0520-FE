@@ -9,14 +9,17 @@ import moment from 'moment'
 class ScoresPage extends React.Component {
   state = {
     className: localStorage.getItem("name"),
+    topScore: null,
+    topScoreDate: null
   };
 
   componentDidMount() {
     const classId = localStorage.getItem("class");
-    // TODO: we need this to finish before we run getHighScore()
+    // TODO: we need this to finish getting the class scores before we run getHighScore()
     // otherwise we end up grabbing the top score from the previous list of scores
     this.props.getScores(classId)
-    this.getHighScore()
+    // hacky fix to wait for props to get updated before we calculate the highScore
+    window.setTimeout(() => this.getHighScore(), 100)
   }
 
   getHighScore = () => {
@@ -26,15 +29,15 @@ class ScoresPage extends React.Component {
     let topScore;
     if (this.props.scores.length > 0) {
       topScore = this.props.scores.reduce((prev, current) => prev.score > current.score ? prev : current)
-      localStorage.setItem('topScore', topScore.score)
-      localStorage.setItem('topScoreDate', topScore.created_at)
+      this.setState({
+        topScore: topScore.score,
+        topScoreDate: topScore.created_at
+      })
     }
   };
 
   render() {
     // console.log(this.getHighScore());
-    const topDate = moment(localStorage.getItem("topScoreDate")).format("MMM Do YY")
-    const topScore = localStorage.getItem("topScore")
 
     return (
       <div className="center">
@@ -43,8 +46,8 @@ class ScoresPage extends React.Component {
           <h1 className="classroom">{this.state.className}</h1>
           <h1> High Score </h1>
           <div className="daily-scores">
-            <div>{topDate}</div>
-              {topScore}
+            <div>{moment(this.state.topScoreDate).format("MMM Do YY")}</div>
+              {this.state.topScore}
           </div>
 
           <h1> Daily Scores </h1>
