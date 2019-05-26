@@ -3,8 +3,9 @@ import "./ScoresPage.css";
 import { connect } from "react-redux";
 import { getScores, getHighScore } from "../../actions";
 import Scores from "./Scores";
-import NavBar from '../NavBar/NavBar'
-import moment from 'moment'
+import NavBar from '../NavBar/NavBar';
+import moment from 'moment';
+import Loader from 'react-loader-spinner';
 
 class ScoresPage extends React.Component {
   state = {
@@ -46,14 +47,25 @@ class ScoresPage extends React.Component {
           <h1 className="classroom">{this.state.className}</h1>
           <h1> High Score </h1>
           <div className="daily-scores">
-            <div>{moment(this.state.topScoreDate).format("MMM Do YY")}</div>
-              {this.state.topScore}
+            {this.state.topScoreDate ?
+              <>
+                <div>{moment(this.state.topScoreDate).format("MMM Do YY")}</div> 
+                <div>{this.state.topScore}</div> 
+              </> :
+              <Loader 
+                type="Rings" 
+                color="green" 
+                height={80} 
+                width={80} 
+              />
+            }
+            
           </div>
 
           <h1> Daily Scores </h1>
 
           {this.props.scores &&
-          // reverse scores array to show most recent at the top
+          // reverse a copy of scores array to show most recent at the top
             [...this.props.scores].reverse().map(score => (
               <Scores score={score} key={score.id} />
             ))}
