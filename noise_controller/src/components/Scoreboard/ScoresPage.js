@@ -54,7 +54,7 @@ class ScoresPage extends React.Component {
 
           {this.props.scores &&
           // reverse scores array to show most recent at the top
-            this.props.scores.reverse().map(score => (
+            [...this.props.scores].reverse().map(score => (
               <Scores score={score} key={score.id} />
             ))}
         </div>
