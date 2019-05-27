@@ -15,8 +15,20 @@ class SignUp extends React.Component {
       email: "",
       username: "",
       password: ""
-    }
+    },
+    token: false
   };
+
+  componentDidMount() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("teacher");
+    localStorage.removeItem("class");
+    localStorage.removeItem("name");
+    // calling setState here to force an additional render and get the Nav to render correctly
+    this.setState({
+      token: false
+    })
+  }
 
   handleChanges = e => {
     this.setState({
